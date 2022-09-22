@@ -1,7 +1,6 @@
-package cucumber.framework.scenariotest;
+package cucumber.framework.scenariotest.nopc;
 
-public enum HRMSSceneLogin{
-	
+public enum NOPCSceneLogin {
 
 	T1("User invalid login"),
 	T2("User valid login"),
@@ -9,7 +8,7 @@ public enum HRMSSceneLogin{
 	
 	private String testName;
 	
-	private HRMSSceneLogin(String value) {
+	private NOPCSceneLogin(String value) {
 		testName = value;
 	}
 	

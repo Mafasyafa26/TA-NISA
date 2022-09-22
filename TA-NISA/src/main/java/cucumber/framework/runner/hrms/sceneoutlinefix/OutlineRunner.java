@@ -1,4 +1,4 @@
-package cucumber.framework.runner;
+package cucumber.framework.runner.hrms.sceneoutlinefix;
 
 import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;

@@ -1,4 +1,4 @@
-package cucumber.framework.runner;
+package cucumber.framework.runner.hrms.sceneoutlinefix;
 
 import java.io.IOException;
 
@@ -11,7 +11,7 @@ import com.relevantcodes.extentreports.LogStatus;
 import cucumber.RoadRunner;
 import cucumber.framework.connection.DriverSingleton;
 import cucumber.framework.constant.Constants;
-import cucumber.framework.scenariotest.HRMSSceneLogin;
+import cucumber.framework.scenariotest.hrms.HRMSSceneOutlineFix;
 import cucumber.framework.utils.Utils;
 import io.cucumber.java.After;
 import io.cucumber.java.AfterAll;
@@ -24,7 +24,7 @@ public class SceneOutlineHooks extends RoadRunner{
 	public static WebDriver driver;
 	public static ExtentTest extentTest;
 	public static ExtentReports reports = new ExtentReports("target/hrms/extentreport/hrms-scene-login-outline-xr.html");
-	private static HRMSSceneLogin[] tests = HRMSSceneLogin.values();
+	private static HRMSSceneOutlineFix[] tests = HRMSSceneOutlineFix.values();
 	private static final int[] DATA_OUTLINE = {6,6,1,1};
 	private String testReport = "";
 	

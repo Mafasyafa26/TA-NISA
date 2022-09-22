@@ -1,4 +1,4 @@
-package cucumber.framework.runner;
+package cucumber.framework.runner.hrms.sceneoutlinefix;
 
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
@@ -8,7 +8,7 @@ import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 
 import cucumber.framework.constant.Constants;
-import cucumber.framework.page.LoginPage;
+import cucumber.framework.page.hrms.LoginPage;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;

@@ -1,4 +1,4 @@
-package cucumber.framework.page;
+package cucumber.framework.page.hrms;
 
 import java.time.Duration;
 
