@@ -1,14 +1,22 @@
 package cucumber.framework.page.jcadmin;
 
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
+import java.time.Duration;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import cucumber.framework.connection.DriverSingleton;
 import cucumber.framework.constant.Constants;
+import cucumber.framework.utils.Utils;
 
 public class JCAdminTestimonial extends JCAdminLoginPage {
 	private WebDriver driver;
@@ -25,6 +33,8 @@ public class JCAdminTestimonial extends JCAdminLoginPage {
 	private WebElement btnTestimonial;
 	@FindBy(linkText = "Tambahh")
 	private WebElement btnTambahhTestimonial;
+	@FindBy(xpath = "//h3[normalize-space()='List Testimonial']")
+	private WebElement txtLaman;
 	
 	//form tambah testimonial
 	@FindBy(name = "uploadedFile")
@@ -40,14 +50,21 @@ public class JCAdminTestimonial extends JCAdminLoginPage {
 	@FindBy(name = "mysubmit")
 	private WebElement btnSubmit;
 	
-	
-	public void tambahDataRincianBiaya() {
+	public void goToHome() {
 		this.btnHome.click();
+	}
+	public void goToTestimonial() {
 		this.btnTestimonial.click();
+	}
+	
+	public void goToTambahTesti() {
 		this.btnTambahhTestimonial.click();
+	}
+	
+	public void tambahDataTestimonialPublish(String status) {
 		this.upload.click();
 		this.upload.sendKeys("C:\\fakepath\\shutterstock.jpeg");
-		this.nama.sendKeys("Namaku Budi");
+		this.nama.sendKeys("Budi");
 		selPublish.click();
 		Select selPublish = new Select(driver.findElement(By.id("exampleFormControlSelect9")));
 		selPublish.selectByVisibleText("Active");
@@ -56,6 +73,27 @@ public class JCAdminTestimonial extends JCAdminLoginPage {
 		Select selRating = new Select(driver.findElement(By.id("rating")));
 		selRating.selectByVisibleText("0");
 		this.btnSubmit.click();
+	}
+	
+	public void clickSimpan() {
+		//scroll + click simpan
+		Utils.delay(2, strDelay);
+		try {
+			Robot rbt = new Robot();
+			rbt.keyPress(KeyEvent.VK_TAB);
+			rbt.keyRelease(KeyEvent.VK_TAB);
+			rbt.keyPress(KeyEvent.VK_ENTER);
+			rbt.keyRelease(KeyEvent.VK_ENTER);
+		} catch (AWTException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		Utils.delay(4, strDelay);
+	}
+	
+	public String getTxtTestimonial() {
+		return new WebDriverWait(driver, Duration.ofSeconds(15))
+				.until(ExpectedConditions.visibilityOf(txtLaman)).getText();
 	}
 	
 	
