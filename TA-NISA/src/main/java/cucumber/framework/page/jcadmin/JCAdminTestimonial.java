@@ -72,7 +72,6 @@ public class JCAdminTestimonial extends JCAdminLoginPage {
 		selRating.click();
 		Select selRating = new Select(driver.findElement(By.id("rating")));
 		selRating.selectByVisibleText("0");
-		this.btnSubmit.click();
 	}
 	
 	public void clickSimpan() {
