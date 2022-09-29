@@ -6,6 +6,7 @@ import java.awt.event.KeyEvent;
 import java.time.Duration;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -43,11 +44,12 @@ public class JCAdminTestimonial extends JCAdminLoginPage {
 	private WebElement nama;
 	@FindBy(id = "exampleFormControlSelect9")
 	private WebElement selPublish;
-	@FindBy(id = "body")
+	@FindBy(name = "body")
 	private WebElement isiTesti;
-	@FindBy(id = "rating")
-	private WebElement selRating;
-	@FindBy(name = "mysubmit")
+	@FindBy(xpath = "/html[1]/body[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[1]/div[1]/form[1]/div[2]/div[1]/div[5]/div[1]/select[1]")
+	private WebElement selRating;	
+	
+	@FindBy(xpath = "//input[@name='mysubmit']")
 	private WebElement btnSubmit;
 	
 	public void goToHome() {
@@ -61,17 +63,21 @@ public class JCAdminTestimonial extends JCAdminLoginPage {
 		this.btnTambahhTestimonial.click();
 	}
 	
-	public void tambahDataTestimonialPublish(String status) {
-		this.upload.click();
-		this.upload.sendKeys("C:\\fakepath\\shutterstock.jpeg");
+	public void tambahDataTestimonialPublish(String statss) {
+//		this.upload.click();
+//		this.upload.sendKeys("C:\\fakepath\\shutterstock.jpeg");
 		this.nama.sendKeys("Budi");
-		selPublish.click();
-		Select selPublish = new Select(driver.findElement(By.id("exampleFormControlSelect9")));
-		selPublish.selectByVisibleText("Active");
+//		selPublish.click();
+		Select selPublish = new Select(this.selPublish);
+		selPublish.selectByVisibleText(statss);
+		Utils.delay(3, strDelay);
 		this.isiTesti.sendKeys("Juara Coding the best");
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(0,1000)", "");
+		Utils.delay(8, strDelay);
 		selRating.click();
-		Select selRating = new Select(driver.findElement(By.id("rating")));
-		selRating.selectByVisibleText("0");
+		Select selRating = new Select(this.selRating);
+		selRating.selectByVisibleText("2");
 	}
 	
 	public void clickSimpan() {
@@ -88,6 +94,7 @@ public class JCAdminTestimonial extends JCAdminLoginPage {
 			e.printStackTrace();
 		}
 		Utils.delay(4, strDelay);
+		this.btnSubmit.click();
 	}
 	
 	public String getTxtTestimonial() {

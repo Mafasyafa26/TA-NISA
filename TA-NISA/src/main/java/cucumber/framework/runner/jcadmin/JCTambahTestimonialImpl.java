@@ -42,12 +42,12 @@ public class JCTambahTestimonialImpl {
 		JCAdminTes.goToTambahTesti();
 	}
 
-	@When("Admin mengisi form dengan publish (.*)$")
+	@And("^Admin mengisi form dengan publish (.*)$")
 	public void admin_mengisi_form_dengan_publish_active(String stat) {
 		JCAdminTes.tambahDataTestimonialPublish(stat);
 	}
 
-	@When("Admin menekan tombol simpan")
+	@And("Admin menekan tombol simpan")
 	public void admin_menekan_tombol_simpan() {
 		JCAdminTes.clickSimpan();
 	}

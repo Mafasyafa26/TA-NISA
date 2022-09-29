@@ -8,5 +8,5 @@ Feature: Tambah Testimonial
     
    Examples:
    	|status|
-   	|Active|
    	|No Active|
+   	|Active|
