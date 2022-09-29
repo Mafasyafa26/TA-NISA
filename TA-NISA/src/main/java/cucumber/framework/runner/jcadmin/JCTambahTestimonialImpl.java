@@ -44,6 +44,7 @@ public class JCTambahTestimonialImpl {
 
 	@And("^Admin mengisi form dengan publish (.*)$")
 	public void admin_mengisi_form_dengan_publish_active(String stat) {
+		Utils.fullScroll();
 		JCAdminTes.tambahDataTestimonialPublish(stat);
 	}
 

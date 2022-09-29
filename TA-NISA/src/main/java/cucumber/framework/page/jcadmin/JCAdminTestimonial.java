@@ -70,7 +70,6 @@ public class JCAdminTestimonial extends JCAdminLoginPage {
 		Utils.delay(3, strDelay);
 		this.isiTesti.sendKeys("Juara Coding the best");
 		Utils.delay(3, strDelay);
-		Utils.fullScroll();
 		selRating.click();
 		pilihRating(2);
 		Utils.delay(3, strDelay);
