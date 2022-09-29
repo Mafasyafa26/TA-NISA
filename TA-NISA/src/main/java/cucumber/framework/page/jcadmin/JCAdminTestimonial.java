@@ -40,10 +40,12 @@ public class JCAdminTestimonial extends JCAdminLoginPage {
 	private WebElement txtLaman;
 	
 	//form tambah testimonial
-	@FindBy(css = "input[name='uploadedFile']")
+	@FindBy(xpath = "//input[@name='uploadedFile']")
 	private WebElement upload;
 	@FindBy(name = "nama")
 	private WebElement nama;
+	@FindBy(xpath = "//input[@id='nama']")
+	private WebElement namaEdit;
 	@FindBy(id = "exampleFormControlSelect9")
 	private WebElement selPublish;
 	@FindBy(name = "body")
@@ -51,78 +53,53 @@ public class JCAdminTestimonial extends JCAdminLoginPage {
 	@FindBy(xpath = "/html[1]/body[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[1]/div[1]/form[1]/div[2]/div[1]/div[5]/div[1]/select[1]")
 	private WebElement selRating;	
 	
+//	data pertama yang akan diedit 
+	@FindBy(xpath ="//figure[1]//a[1]//img[1]")
+	private WebElement editPertama;
+	
 	@FindBy(xpath = "//input[@name='mysubmit']")
 	private WebElement btnSubmit;
 	
-	public void goToHome() {
-		this.btnHome.click();
-	}
-	public void goToTestimonial() {
-		this.btnTestimonial.click();
-	}
-	
-	public void goToTambahTesti() {
-		this.btnTambahhTestimonial.click();
-	}
-	
 	public void tambahDataTestimonialPublish(String statss){
-		this.upload.click();
-//		uploadFile();
-//		this.upload.click();
-//		this.upload.sendKeys("C:\\fakepath\\shutterstock.jpeg");
-//		this.nama.sendKeys("Budi");
-//		Select selPublish = new Select(this.selPublish);
-//		selPublish.selectByVisibleText(statss);
+		uploadFile("C:\\Users\\NEXSOFT\\Downloads\\shutterstock.jpeg");
 		Utils.delay(3, strDelay);
-//		this.isiTesti.sendKeys("Juara Coding the best");
-//		Utils.delay(3, strDelay);
-//		JavascriptExecutor js = (JavascriptExecutor) driver;
-//		js.executeScript("window.scrollBy(0,document.body.scrollHeight)");
-//		selRating.click();
-//		pilihRating(2);
+		this.nama.sendKeys("Budi");
+		Utils.delay(3, strDelay);
+		Select selPublish = new Select(this.selPublish);
+		selPublish.selectByVisibleText(statss);
+		Utils.delay(3, strDelay);
+		this.isiTesti.sendKeys("Juara Coding the best");
+		Utils.delay(3, strDelay);
+		Utils.fullScroll();
+		selRating.click();
+		pilihRating(2);
+		Utils.delay(3, strDelay);
 	}
 	
-	public void uploadFile() {
-		 //identify element and click
-	      upload.click();
-		StringSelection s = new StringSelection("C:\\Users\\NEXSOFT\\Downloads\\shutterstock.jpeg");
-	      // Clipboard copy
-	      Toolkit.getDefaultToolkit().getSystemClipboard().setContents(s,null);
-	      // Robot object creation
-	      Robot rbt;
-		try {
-			rbt = new Robot();
-		      //pressing ctrl+v
-		      rbt.keyPress(KeyEvent.VK_CONTROL);
-		      rbt.keyPress(KeyEvent.VK_V);
-		      //releasing ctrl+v
-		      rbt.keyRelease(KeyEvent.VK_CONTROL);
-		      rbt.keyRelease(KeyEvent.VK_V);
-		      //pressing enter
-		      rbt.keyPress(KeyEvent.VK_ENTER);
-		      //releasing enter
-		      rbt.keyRelease(KeyEvent.VK_ENTER);
-		} catch (AWTException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+	// MENGEDIT DATA
+		public void editNamaPeserta(String namaPeserta) {
+			this.namaEdit.click();
+			clearField();
+			this.nama.sendKeys(namaPeserta);
+			Utils.fullScroll();
+			clickSimpan();
 		}
+		
+		public void editClickDataPertama() {
+			this.editPertama.click();
+		}
+	
+//	C:\\Users\\NEXSOFT\\Downloads\\shutterstock.jpeg
+	
+	public void uploadFile(String foto){
+		Utils.delay(1, strDelay);
+		this.upload.sendKeys(foto);
 	}
 	
 	public void clickSimpan() {
-		//scroll + click simpan
-		this.btnSubmit.click();
-		Utils.delay(2, strDelay);
-		try {
-			Robot rbt = new Robot();
-			rbt.keyPress(KeyEvent.VK_TAB);
-			rbt.keyRelease(KeyEvent.VK_TAB);
-			rbt.keyPress(KeyEvent.VK_ENTER);
-			rbt.keyRelease(KeyEvent.VK_ENTER);
-		} catch (AWTException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		Utils.delay(4, strDelay);
+			Utils.fullScroll();;
+			Utils.delay(1, strDelay);
+			this.btnSubmit.click();
 	}
 	
 	public String getTxtTestimonial() {
@@ -130,7 +107,7 @@ public class JCAdminTestimonial extends JCAdminLoginPage {
 				.until(ExpectedConditions.visibilityOf(txtLaman)).getText();
 	}
 	
-	public void pilihRating(int nilaiRate) {
+	public static void pilihRating(int nilaiRate) {
 		try {
 			Robot rbt = new Robot();
 			for (int i= 0; i<nilaiRate;i++) {
@@ -143,7 +120,32 @@ public class JCAdminTestimonial extends JCAdminLoginPage {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+	}
+
+	public void goToHome() {
+		this.btnHome.click();
+	}
+	public void goToTestimonial() {
+		this.btnTestimonial.click();
+	}
+	
+	public void goToTambahTesti() {
+		this.btnTambahhTestimonial.click();
+	}
+	
+	public void clearField() {
+		try {
+			Robot rbtclr = new Robot();
+			rbtclr.keyPress(KeyEvent.VK_CONTROL);
+			rbtclr.keyPress(KeyEvent.VK_A);
+			rbtclr.keyRelease(KeyEvent.VK_CONTROL);
+			rbtclr.keyRelease(KeyEvent.VK_A);
+			rbtclr.keyPress(KeyEvent.VK_BACK_SPACE);
+			rbtclr.keyRelease(KeyEvent.VK_BACK_SPACE);
+		} catch (AWTException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	
