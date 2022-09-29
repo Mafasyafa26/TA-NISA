@@ -96,7 +96,6 @@ public class JCAdminTestimonial extends JCAdminLoginPage {
 	}
 	
 	public void clickSimpan() {
-			Utils.fullScroll();;
 			Utils.delay(1, strDelay);
 			this.btnSubmit.click();
 	}
