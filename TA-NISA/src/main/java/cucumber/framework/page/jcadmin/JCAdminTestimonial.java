@@ -2,6 +2,8 @@ package cucumber.framework.page.jcadmin;
 
 import java.awt.AWTException;
 import java.awt.Robot;
+import java.awt.Toolkit;
+import java.awt.datatransfer.StringSelection;
 import java.awt.event.KeyEvent;
 import java.time.Duration;
 
@@ -38,7 +40,7 @@ public class JCAdminTestimonial extends JCAdminLoginPage {
 	private WebElement txtLaman;
 	
 	//form tambah testimonial
-	@FindBy(name = "uploadedFile")
+	@FindBy(css = "input[name='uploadedFile']")
 	private WebElement upload;
 	@FindBy(name = "nama")
 	private WebElement nama;
@@ -63,25 +65,52 @@ public class JCAdminTestimonial extends JCAdminLoginPage {
 		this.btnTambahhTestimonial.click();
 	}
 	
-	public void tambahDataTestimonialPublish(String statss) {
+	public void tambahDataTestimonialPublish(String statss){
+		this.upload.click();
+//		uploadFile();
 //		this.upload.click();
 //		this.upload.sendKeys("C:\\fakepath\\shutterstock.jpeg");
-		this.nama.sendKeys("Budi");
-//		selPublish.click();
-		Select selPublish = new Select(this.selPublish);
-		selPublish.selectByVisibleText(statss);
+//		this.nama.sendKeys("Budi");
+//		Select selPublish = new Select(this.selPublish);
+//		selPublish.selectByVisibleText(statss);
 		Utils.delay(3, strDelay);
-		this.isiTesti.sendKeys("Juara Coding the best");
-		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("window.scrollBy(0,1000)", "");
-		Utils.delay(8, strDelay);
-		selRating.click();
-		Select selRating = new Select(this.selRating);
-		selRating.selectByVisibleText("2");
+//		this.isiTesti.sendKeys("Juara Coding the best");
+//		Utils.delay(3, strDelay);
+//		JavascriptExecutor js = (JavascriptExecutor) driver;
+//		js.executeScript("window.scrollBy(0,document.body.scrollHeight)");
+//		selRating.click();
+//		pilihRating(2);
+	}
+	
+	public void uploadFile() {
+		 //identify element and click
+	      upload.click();
+		StringSelection s = new StringSelection("C:\\Users\\NEXSOFT\\Downloads\\shutterstock.jpeg");
+	      // Clipboard copy
+	      Toolkit.getDefaultToolkit().getSystemClipboard().setContents(s,null);
+	      // Robot object creation
+	      Robot rbt;
+		try {
+			rbt = new Robot();
+		      //pressing ctrl+v
+		      rbt.keyPress(KeyEvent.VK_CONTROL);
+		      rbt.keyPress(KeyEvent.VK_V);
+		      //releasing ctrl+v
+		      rbt.keyRelease(KeyEvent.VK_CONTROL);
+		      rbt.keyRelease(KeyEvent.VK_V);
+		      //pressing enter
+		      rbt.keyPress(KeyEvent.VK_ENTER);
+		      //releasing enter
+		      rbt.keyRelease(KeyEvent.VK_ENTER);
+		} catch (AWTException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	public void clickSimpan() {
 		//scroll + click simpan
+		this.btnSubmit.click();
 		Utils.delay(2, strDelay);
 		try {
 			Robot rbt = new Robot();
@@ -94,12 +123,27 @@ public class JCAdminTestimonial extends JCAdminLoginPage {
 			e.printStackTrace();
 		}
 		Utils.delay(4, strDelay);
-		this.btnSubmit.click();
 	}
 	
 	public String getTxtTestimonial() {
 		return new WebDriverWait(driver, Duration.ofSeconds(15))
 				.until(ExpectedConditions.visibilityOf(txtLaman)).getText();
+	}
+	
+	public void pilihRating(int nilaiRate) {
+		try {
+			Robot rbt = new Robot();
+			for (int i= 0; i<nilaiRate;i++) {
+				rbt.keyPress(KeyEvent.VK_DOWN);
+				rbt.keyRelease(KeyEvent.VK_DOWN);
+			}
+			rbt.keyPress(KeyEvent.VK_ENTER);
+			rbt.keyRelease(KeyEvent.VK_ENTER);
+		} catch (AWTException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 	}
 	
 	
