@@ -5,6 +5,7 @@ import static org.testng.Assert.assertTrue;
 import org.openqa.selenium.WebDriver;
 
 import com.relevantcodes.extentreports.ExtentTest;
+import com.relevantcodes.extentreports.LogStatus;
 
 import cucumber.framework.constant.Constants;
 import cucumber.framework.page.hrms.LoginPage;
@@ -35,27 +36,32 @@ public class JCTambahTestimonialImpl {
 	public void admin_login_dan_membuka_halaman_testimonial() {
 		JCAdminTes.goToHome();
 	    JCAdminTes.goToTestimonial();
+	    extentTest.log(LogStatus.PASS, "Admin login dan membuka halaman testimonial");
 	}
 
 	@When("Admin klik tombol tambah")
 	public void admin_klik_tombol_tambah() {
 		JCAdminTes.goToTambahTesti();
+		extentTest.log(LogStatus.PASS, "Admin klik tombol tambah");
 	}
 
 	@And("^Admin mengisi form dengan publish (.*)$")
 	public void admin_mengisi_form_dengan_publish_active(String stat) {
 		Utils.fullScroll();
 		JCAdminTes.tambahDataTestimonialPublish(stat);
+		extentTest.log(LogStatus.PASS, "Admin mengisi form dengan publish");
 	}
 
 	@And("Admin menekan tombol simpan")
 	public void admin_menekan_tombol_simpan() {
 		JCAdminTes.clickSimpan();
+		extentTest.log(LogStatus.PASS, "Admin menekan tombol simpan");
 	}
 
 	@Then("Admin menambah testimonial active valid")
 	public void admin_menambah_testimonial_active_valid() {
 		assertTrue(JCAdminTes.getTxtTestimonial().contains("List Testimonial"));
+		extentTest.log(LogStatus.PASS, "Admin menambah testimonial active valid");
 	}
 
 }

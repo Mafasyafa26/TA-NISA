@@ -29,8 +29,16 @@ public class JCAdminLoginPage {
 	private WebElement password;
 	@FindBy(xpath = "//button[@type='submit']")
 	private WebElement btnLogin;
+	
+//	validasi
 	@FindBy(xpath = "//span[normalize-space()='husaini al banna']")
 	private WebElement txtName;
+	@FindBy(xpath = "//h2[@id='swal2-title']")
+	private WebElement txtKosong;
+	@FindBy(xpath = "//button[normalize-space()='OK']")
+	private WebElement btnKosong;
+	@FindBy(xpath = "//p[@class='alert alert-warning']")
+	private WebElement txtSalah;
 
 	//scenario
 		public void LoginPage(String username, String password) {
@@ -38,11 +46,24 @@ public class JCAdminLoginPage {
 			Utils.delay(1, strDelay);
 			this.password.sendKeys(password);
 			Utils.delay(1, strDelay);
-			btnLogin.click();
+			this.btnSimpan();
+		}
+		
+		public void LoginPageValid(String username, String password) {
+			this.username.sendKeys(username); //step
+			Utils.delay(1, strDelay);
+			this.password.sendKeys(password);
+			Utils.delay(1, strDelay);
 		}
 
 		public String getTxtName(int delays) {
 			return new WebDriverWait(driver, Duration.ofSeconds(15))
 					.until(ExpectedConditions.visibilityOf(txtName)).getText();
 		}
+		
+		public void btnSimpan() {
+			this.btnLogin.click();
+		}
+		
+		
 }
