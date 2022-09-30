@@ -1,14 +1,14 @@
 package cucumber.framework.scenariotest.jcadmin;
 
 public enum JCAdminTesting {
-	M1("User invalid login simpan"),
-	M2("User invalid login klik submit"),
-	M3("User invalid login input username"),
-	M4("User valid login input password"),
-	M5("User invalid login input password uppercase"),
-	M6("User invalid login upper"),
-	M7("User invalid login input spasi"),
-	M8("User invalid login user tanpa format email");
+	M001("Admin invalid login simpan"),
+	M002("Admin invalid login klik submit"),
+	M003("Admin invalid login input username"),
+	M004("Admin valid login input password"),
+	M005("Admin invalid login input password uppercase"),
+	M006("Admin invalid login upper"),
+	M007("Admin invalid login input spasi"),
+	M008("Admin invalid login user tanpa format email");
 	
 	private String testName;
 	
