@@ -18,15 +18,14 @@ Background: BG login
       | username | password  |
       | UCEN1315@GMAIL.COM | a |
       
-  Scenario Outline: User valid login upperlower case Outlinee
+  Scenario: User valid login upperlower case Outlinee
     When Admin input <username> dan <password> uplow
     And Admin klik button simpan uplow
     Then Admin berhasil login uplow
 
-#2 data
+#1 data
     Examples: 
       | username | password  |
-      | Ucen1315@gmail.com | a |
       | Ucen1315@Gmail.com | a |
       
       

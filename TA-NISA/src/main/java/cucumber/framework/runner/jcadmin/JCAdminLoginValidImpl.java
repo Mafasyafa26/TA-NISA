@@ -8,7 +8,7 @@ import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 
 import cucumber.framework.constant.Constants;
-import cucumber.framework.page.jcadmin.JCAdminTestimonial;
+import cucumber.framework.page.jcadmin.JCAdminLoginPage;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -18,7 +18,7 @@ public class JCAdminLoginValidImpl {
 	private static WebDriver driver;
 	private static ExtentTest extentTest; 
 	String strDelay = Constants.GLOB_PARAM_DELAY;
-	private JCAdminTestimonial JCAdminTes = new JCAdminTestimonial();
+	private JCAdminLoginPage JCAdminLogin = new JCAdminLoginPage();
 	
 	public JCAdminLoginValidImpl() {
 		driver = JCAdminHooks.driver;
@@ -36,57 +36,57 @@ public class JCAdminLoginValidImpl {
 //	user valid
 	@When("Admin input valid username dan password")
 	public void admin_input_valid_username_dan_password() {
-	    JCAdminTes.LoginPageValid("ucen1315@gmail.com", "a");
+	    JCAdminLogin.LoginPageValid("ucen1315@gmail.com", "a");
 		extentTest.log(LogStatus.PASS, "Admin input valid username dan password");
 	}
 
 	@And("Admin klik button simpan")
 	public void admin_klik_button_simpan() {
-	    JCAdminTes.btnSimpan();
+	    JCAdminLogin.btnSimpan();
 		extentTest.log(LogStatus.PASS, "Admin klik button simpan");
 	}
 
 	@Then("Admin berhasil login")
 	public void admin_berhasil_login() {
-		assertTrue(JCAdminTes.getTxtName(5).contains("banna"));
+		assertTrue(JCAdminLogin.getTxtName(5).contains("husaini al banna"));
 		extentTest.log(LogStatus.PASS, "Admin berhasil login");
 	}
 
 //	user valid upper
 	@When("^Admin input (.*) dan (.*) upper&")
 	public void admin_input_username_dan_password_upper(String user, String pass) {
-	    JCAdminTes.LoginPageValid(user, pass);
+	    JCAdminLogin.LoginPageValid(user, pass);
 		extentTest.log(LogStatus.PASS, "Admin input username dan password upper");
 	}
 
 	@And("Admin klik button simpan upper")
 	public void admin_klik_button_simpan_upper() {
-	    JCAdminTes.btnSimpan();
+	    JCAdminLogin.btnSimpan();
 		extentTest.log(LogStatus.PASS, "Admin klik button simpan upper");
 	}
 
 	@Then("Admin berhasil login upper")
 	public void admin_berhasil_login_upper() {
-		assertTrue(JCAdminTes.getTxtName(5).contains("banna"));
+		assertTrue(JCAdminLogin.getTxtName(5).contains("husaini al banna"));
 		extentTest.log(LogStatus.PASS, "Admin berhasil login upper");
 	}
 
 //	user valid uplow
 	@When("^Admin input (.*) dan (.*) uplow$")
 	public void admin_input_username_dan_password_uplow(String usern, String passw) {
-		JCAdminTes.LoginPageValid(usern, passw);
+		JCAdminLogin.LoginPageValid(usern, passw);
 		extentTest.log(LogStatus.PASS, "Admin input username dan password upper");
 	}
 
 	@And("Admin klik button simpan uplow")
 	public void admin_klik_button_simpan_uplow() {
-		JCAdminTes.btnSimpan();
+		JCAdminLogin.btnSimpan();
 		extentTest.log(LogStatus.PASS, "Admin klik button simpan upper");
 	}
 
 	@Then("Admin berhasil login uplow")
 	public void admin_berhasil_login_uplow() {
-		assertTrue(JCAdminTes.getTxtName(5).contains("banna"));
+		assertTrue(JCAdminLogin.getTxtName(5).contains("husaini al banna"));
 		extentTest.log(LogStatus.PASS, "Admin berhasil login upper");
 	}
 
