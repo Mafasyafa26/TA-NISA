@@ -32,7 +32,7 @@ public class JCAdminLoginInvalidImpl {
 		extentTest.log(LogStatus.PASS, "Admin membuka browser JCAdmin");
 	}
 
-//	Scenario: User invalid login simpan
+//	Scenario: Admin invalid login simpan
 	@When("Admin klik button simpan2")
 	public void admin_klik_button_simpan2() {
 		JCAdminLogin.btnSimpan();
@@ -45,7 +45,7 @@ public class JCAdminLoginInvalidImpl {
 		extentTest.log(LogStatus.PASS, "Admin gagal login simpan2");
 	}
 
-//	Scenario: User invalid login klik submit
+//	Scenario: Admin invalid login klik submit
 	@When("Admin klik username dan password2")
 	public void admin_klik_username_dan_password2() {
 		JCAdminLogin.LoginPageInvalidClick();
@@ -64,7 +64,7 @@ public class JCAdminLoginInvalidImpl {
 		extentTest.log(LogStatus.PASS, "Admin gagal login klik submit2");
 	}
 
-//	Scenario: User invalid login input username
+//	Scenario: Admin invalid login input username
 	@When("Admin input username2")
 	public void admin_input_username2() {
 		JCAdminLogin.LoginPageInvalidUname("ucen1315@gmail.com");
@@ -83,10 +83,10 @@ public class JCAdminLoginInvalidImpl {
 		extentTest.log(LogStatus.PASS, "Admin gagal login input uname2");
 	}
 
-//	Scenario: User invalid login input password
+//	Scenario: Admin invalid login input password
 	@When("Admin input password2")
 	public void admin_input_password2() {
-		JCAdminLogin.LoginPageInvalidUname("a");
+		JCAdminLogin.LoginPageInvalidPass("a");
 		extentTest.log(LogStatus.PASS, "Admin input password2");
 	}
 
@@ -102,7 +102,7 @@ public class JCAdminLoginInvalidImpl {
 		extentTest.log(LogStatus.PASS, "Admin gagal login input pass2");
 	}
 
-//	Scenario: User invalid login input password uppercase
+//	Scenario: Admin invalid login input password uppercase
 	@When("Admin input username dan password upper2")
 	public void admin_input_username_dan_password_upper2() {
 		JCAdminLogin.LoginPageValid("ucen1315@gmail.com", "A");
@@ -121,7 +121,7 @@ public class JCAdminLoginInvalidImpl {
 		extentTest.log(LogStatus.PASS, "Admin gagal login input pass upper2");
 	}
 
-//	Scenario: User invalid login upper
+//	Scenario: Admin invalid login upper
 	@When("Admin input upper username dan password2")
 	public void admin_input_upper_username_dan_password2() {
 		JCAdminLogin.LoginPageInvalid("UCEN1315@GMAIL.COM", "A");
@@ -140,7 +140,7 @@ public class JCAdminLoginInvalidImpl {
 		extentTest.log(LogStatus.PASS, "Admin gagal login upper2");
 	}
 
-//	Scenario: User invalid login input spasi
+//	Scenario: Admin invalid login input spasi
 	@When("Admin input username dan password spasi2")
 	public void admin_input_username_dan_password_spasi2() {
 		JCAdminLogin.LoginPageInvalid(" ", " ");
@@ -159,7 +159,7 @@ public class JCAdminLoginInvalidImpl {
 		extentTest.log(LogStatus.PASS, "Admin gagal login input spasi2");
 	}
 
-//	Scenario: User invalid login user tanpa format email
+//	Scenario: Admin invalid login user tanpa format email
 	@When("Admin input username dan password tanpa format2")
 	public void admin_input_username_dan_password_tanpa_format2() {
 		JCAdminLogin.LoginPageInvalid("ucen1315", "a");
