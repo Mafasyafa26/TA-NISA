@@ -53,7 +53,7 @@ public class JCAdminLoginValidImpl {
 	}
 
 //	user valid upper
-	@When("^Admin input (.*) dan (.*) upper&")
+	@When("^Admin input (.*) dan (.*) upper$")
 	public void admin_input_username_dan_password_upper(String user, String pass) {
 	    JCAdminLogin.LoginPageValid(user, pass);
 		extentTest.log(LogStatus.PASS, "Admin input username dan password upper");
