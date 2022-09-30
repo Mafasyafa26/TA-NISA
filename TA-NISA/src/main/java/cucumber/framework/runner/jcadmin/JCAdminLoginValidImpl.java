@@ -28,7 +28,6 @@ public class JCAdminLoginValidImpl {
 //	bg
 	@When("Admin membuka browser JC")
 	public void admin_membuka_browser_jc() {
-		System.out.println("========ADMIN BUKAA==============");
 		driver.get(Constants.URL_JCADMIN_LOGIN);
 		extentTest.log(LogStatus.PASS, "Admin membuka browser JC");
 	}

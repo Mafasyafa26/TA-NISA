@@ -5,9 +5,10 @@ import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(
 features = {
-		"src/main/resources/jcadmin/001login001loginvalid.feature"},
-//		"src/main/resources/jcadmin/02EditTestimonial.feature"},
-//		"src/main/resources/jcadmin/01Testimonial.feature"},
+		"src/main/resources/jcadmin/001Login002LoginInvalid.feature"},
+//		"src/main/resources/jcadmin/001Login001LoginValid.feature"},
+//		"src/main/resources/jcadmin/001Testimonial002Edit.feature"},
+//		"src/main/resources/jcadmin/001Testimonial001Tambah.feature"},
 glue = "cucumber.framework.runner.jcadmin",
 monochrome=true,
 plugin = {"pretty","html:target/jcadmin/htmlreport/LoginRunner.html",

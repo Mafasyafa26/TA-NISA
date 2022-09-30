@@ -55,10 +55,44 @@ public class JCAdminLoginPage {
 			this.password.sendKeys(password);
 			Utils.delay(1, strDelay);
 		}
+		
+		public void LoginPageInvalid(String username, String password) {
+			this.username.sendKeys(username); //step
+			Utils.delay(1, strDelay);
+			this.password.sendKeys(password);
+			Utils.delay(1, strDelay);
+		}
+		
+		public void LoginPageInvalidClick() {
+			this.username.click();
+			Utils.delay(1, strDelay);
+			this.password.click();
+			Utils.delay(1, strDelay);
+		}
+		
+		public void LoginPageInvalidUname(String username) {
+			this.username.sendKeys(username); 
+			Utils.delay(1, strDelay);
+		}
+		
+		public void LoginPageInvalidPass(String password) {
+			this.password.sendKeys(password);
+			Utils.delay(1, strDelay);
+		}
 
 		public String getTxtName(int delays) {
 			return new WebDriverWait(driver, Duration.ofSeconds(15))
 					.until(ExpectedConditions.visibilityOf(txtName)).getText();
+		}
+		
+		public String getTxtKosong(int delays) {
+			return new WebDriverWait(driver, Duration.ofSeconds(15))
+					.until(ExpectedConditions.visibilityOf(txtKosong)).getText();
+		}
+		
+		public String getTxtSalah(int delays) {
+			return new WebDriverWait(driver, Duration.ofSeconds(15))
+					.until(ExpectedConditions.visibilityOf(txtSalah)).getText();
 		}
 		
 		public void btnSimpan() {
