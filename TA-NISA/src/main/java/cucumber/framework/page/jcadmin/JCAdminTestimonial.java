@@ -45,7 +45,7 @@ public class JCAdminTestimonial extends JCAdminLoginPage {
 	@FindBy(name = "nama")
 	private WebElement nama;
 	@FindBy(xpath = "//input[@id='nama']")
-	private WebElement namaEdit;
+	private WebElement editNamaPeserta;
 	@FindBy(id = "exampleFormControlSelect9")
 	private WebElement selPublish;
 	@FindBy(name = "body")
@@ -76,62 +76,46 @@ public class JCAdminTestimonial extends JCAdminLoginPage {
 	}
 	
 	// MENGEDIT DATA
-		public void editNamaPeserta(String namaPeserta) {
-			this.namaEdit.click();
-			clearField();
-			this.nama.sendKeys(namaPeserta);
-			Utils.fullScroll();
-			clickSimpan();
+		public void editNamaPeserta() {
+			editNamaPeserta.clear();
+			this.editNamaPeserta.sendKeys("Aliando Syarif Rahmatullah");
+			Utils.delay(2, strDelay);
 		}
 		
 		public void editClickDataPertama() {
 			this.editPertama.click();
 		}
-	
-//	C:\\Users\\NEXSOFT\\Downloads\\shutterstock.jpeg
-	
-	public void uploadFile(String foto){
+		
+		public void uploadFile(String foto){
 		Utils.delay(1, strDelay);
 		this.upload.sendKeys(foto);
-	}
+		}
 	
-	public void clickSimpan() {
+		public void clickSimpan() {
+			Utils.fullScroll();;
 			Utils.delay(1, strDelay);
 			this.btnSubmit.click();
-	}
-	
-	public String getTxtTestimonial() {
+		}
+		
+		public String getTxtTestimonial() {
 		return new WebDriverWait(driver, Duration.ofSeconds(15))
 				.until(ExpectedConditions.visibilityOf(txtLaman)).getText();
-	}
-	
-	public static void pilihRating(int nilaiRate) {
-		try {
-			Robot rbt = new Robot();
-			for (int i= 0; i<nilaiRate;i++) {
-				rbt.keyPress(KeyEvent.VK_DOWN);
-				rbt.keyRelease(KeyEvent.VK_DOWN);
-			}
-			rbt.keyPress(KeyEvent.VK_ENTER);
-			rbt.keyRelease(KeyEvent.VK_ENTER);
-		} catch (AWTException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
 		}
-	}
-
-	public void goToHome() {
+		
+		public void goToHome() {
 		this.btnHome.click();
-	}
-	public void goToTestimonial() {
+		}
+	
+		public void goToTestimonial() {
 		this.btnTestimonial.click();
-	}
-	
-	public void goToTambahTesti() {
+		}
+		
+		public void goToTambahTesti() {
 		this.btnTambahhTestimonial.click();
-	}
+		}
 	
-	public void clearField() {
+//		hapus kolom edit (steril)
+		public void clearField() {
 		try {
 			Robot rbtclr = new Robot();
 			rbtclr.keyPress(KeyEvent.VK_CONTROL);
@@ -143,8 +127,23 @@ public class JCAdminTestimonial extends JCAdminLoginPage {
 		} catch (AWTException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+			}
 		}
-	}
+		
+		public static void pilihRating(int nilaiRate) {
+		try {
+			Robot rbt = new Robot();
+			for (int i= 0; i<nilaiRate;i++) {
+				rbt.keyPress(KeyEvent.VK_DOWN);
+				rbt.keyRelease(KeyEvent.VK_DOWN);
+			}
+			rbt.keyPress(KeyEvent.VK_ENTER);
+			rbt.keyRelease(KeyEvent.VK_ENTER);
+		} catch (AWTException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			}
+		}
 	
 	
 //	driver.get("https://dev.ptdika.com/web_jc_v2/index.php/admin#");

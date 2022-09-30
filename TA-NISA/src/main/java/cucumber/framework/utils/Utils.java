@@ -48,4 +48,21 @@ public class Utils {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollBy(0,document.body.scrollHeight)");
 	}
+	
+	public static void zoomOut() {
+		Robot rbt;
+		try {
+			rbt = new Robot();
+			for (int i = 0; i < 6; i++) {
+				rbt.keyPress(KeyEvent.VK_CONTROL);
+				rbt.keyPress(KeyEvent.VK_SUBTRACT);
+				rbt.keyRelease(KeyEvent.VK_SUBTRACT);
+				rbt.keyRelease(KeyEvent.VK_CONTROL);
+			}
+		} catch (AWTException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+}
 }
