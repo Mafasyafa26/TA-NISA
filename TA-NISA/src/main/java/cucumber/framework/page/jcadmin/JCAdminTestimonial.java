@@ -53,9 +53,12 @@ public class JCAdminTestimonial extends JCAdminLoginPage {
 	@FindBy(xpath = "/html[1]/body[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[1]/div[1]/form[1]/div[2]/div[1]/div[5]/div[1]/select[1]")
 	private WebElement selRating;	
 	
-//	data pertama yang akan diedit 
+//	data yang akan diedit 
 	@FindBy(xpath ="//figure[1]//a[1]//img[1]")
 	private WebElement editPertama;
+	
+	@FindBy(xpath ="//figure[14]//a[1]//img[1]")
+	private WebElement editData;
 	
 	@FindBy(xpath = "//input[@name='mysubmit']")
 	private WebElement btnSubmit;
@@ -79,6 +82,12 @@ public class JCAdminTestimonial extends JCAdminLoginPage {
 		public void editNamaPeserta() {
 			editNamaPeserta.clear();
 			this.editNamaPeserta.sendKeys("Aliando Syarif Rahmatullah");
+			Utils.delay(2, strDelay);
+		}
+		
+		public void editIsiTesti() {
+			isiTesti.clear();
+			this.isiTesti.sendKeys("Fasilitas di JuaraCoding sangat lengkap dari internet yang cepat");
 			Utils.delay(2, strDelay);
 		}
 		

@@ -8,7 +8,7 @@ Feature: Edit Testimonial
   And Admin menekan tombol simpan edit nama peserta
   Then Admin berhasil edit nama peserta
   
- Scenario: Mengedit isi testimonial di data kedua
+ Scenario: Mengedit isi testimonial 
   When Admin mengedit isi testimonial 
   And Admin menekan tombol simpan edit isi testimonial
   Then Admin berhasil edit isi testimonial

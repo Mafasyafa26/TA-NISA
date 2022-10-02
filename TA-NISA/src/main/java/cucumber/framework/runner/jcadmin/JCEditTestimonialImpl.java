@@ -40,6 +40,7 @@ public class JCEditTestimonialImpl {
 	}
 	//INI AKHIR BACKGROUND
 	
+//	edit nama peserta
 	@When("Admin mengedit nama peserta")
 	public void admin_mengedit_nama_peserta() {
 		System.out.println("INI DARI ADMIN EDIT NAMA");
@@ -62,23 +63,29 @@ public class JCEditTestimonialImpl {
 		
 	    System.out.println("nama peserta sudah diedit");
 	}
+	
+//	edit isi
+	@When("Admin mengedit isi testimonial")
+	public void admin_mengedit_isi_testimonial() {
+		System.out.println("INI DARI ADMIN EDIT ISI");
+//	    Utils.fullScroll();
+		Utils.delay(2, strDelay);
+	    JCAdminTes.editIsiTesti();
+	    Utils.delay(2, strDelay);
+	    extentTest.log(LogStatus.PASS, "Admin mengedit isi testimonial");
+	}
 
-//	@When("^Admin mengedit harga awal dengan (.*)$")
-//	public void admin_mengedit_harga_awal_dengan_harga_awal(String hargaSekarang) {
-//	    // edit harga awal 
-//		JCAdminRB.editHargaAwal(hargaSekarang);
-//	}
-//
-//	@When("Admin menekan tombol simpan edit harga awal")
-//	public void admin_menekan_tombol_simpan_edit_harga_awal() {
-//	    //admin menekan tombol simpan edit harga 
-//		System.out.println("admin simpan edit harga awal");
-//		
-//	}
-//
-//	@Then("Admin mengedit harga awal")
-//	public void admin_mengedit_harga_awal() {
-//	    System.out.println("admin mengedit harga awal");
-//	}
+	@And("Admin menekan tombol simpan edit isi testimonial")
+	public void admin_menekan_tombol_simpan_edit_isi_testimonial() {
+		Utils.fullScroll();
+		JCAdminTes.clickSimpan();
+		extentTest.log(LogStatus.PASS, "Admin menekan tombol simpan edit isi testimonial");
+	}
+
+	@Then("Admin berhasil edit isi testimonial")
+	public void admin_berhasil_edit_isi_testimonial() {
+		
+	    System.out.println("nama peserta sudah diedit");
+	}
 
 }
