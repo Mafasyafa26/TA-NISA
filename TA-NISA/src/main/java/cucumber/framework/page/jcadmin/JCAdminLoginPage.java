@@ -22,7 +22,6 @@ public class JCAdminLoginPage {
 		PageFactory.initElements(driver, this);
 	}
 
-	
 	@FindBy(id = "username")
 	private WebElement username;
 	@FindBy(id = "password")
@@ -49,6 +48,7 @@ public class JCAdminLoginPage {
 			this.btnSimpan();
 		}
 		
+//		scenario login valid
 		public void LoginPageValid(String username, String password) {
 			this.username.sendKeys(username); //step
 			Utils.delay(1, strDelay);
@@ -56,6 +56,7 @@ public class JCAdminLoginPage {
 			Utils.delay(1, strDelay);
 		}
 		
+//		scenario login invalid
 		public void LoginPageInvalid(String username, String password) {
 			this.username.sendKeys(username); //step
 			Utils.delay(1, strDelay);
@@ -95,6 +96,7 @@ public class JCAdminLoginPage {
 					.until(ExpectedConditions.visibilityOf(txtSalah)).getText();
 		}
 		
+//		scenario simpan
 		public void btnSimpan() {
 			this.btnLogin.click();
 		}
