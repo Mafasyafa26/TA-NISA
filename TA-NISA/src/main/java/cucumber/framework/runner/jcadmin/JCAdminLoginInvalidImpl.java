@@ -33,149 +33,149 @@ public class JCAdminLoginInvalidImpl {
 	}
 
 //	Scenario: Admin invalid login simpan
-	@When("Admin klik button simpan2")
-	public void admin_klik_button_simpan2() {
+	@When("LO001N Admin klik button simpan")
+	public void admin_klik_button_simpan() {
 		JCAdminLogin.btnSimpan();
-		extentTest.log(LogStatus.PASS, "Admin klik button simpan2");
+		extentTest.log(LogStatus.PASS, "LO001N Admin klik button simpan");
 	}
 
-	@Then("Admin gagal login simpan2")
-	public void admin_gagal_login_simpan2() {
+	@Then("LO001N Admin gagal login simpan")
+	public void admin_gagal_login_simpan() {
 		assertTrue(JCAdminLogin.getTxtKosong(5).contains("Oops..."));
-		extentTest.log(LogStatus.PASS, "Admin gagal login simpan2");
+		extentTest.log(LogStatus.PASS, "LO001N Admin gagal login simpan");
 	}
 
 //	Scenario: Admin invalid login klik submit
-	@When("Admin klik username dan password2")
-	public void admin_klik_username_dan_password2() {
+	@When("LO002N Admin klik username dan password")
+	public void admin_klik_username_dan_password() {
 		JCAdminLogin.LoginPageInvalidClick();
-		extentTest.log(LogStatus.PASS, "Admin klik username dan password2");
+		extentTest.log(LogStatus.PASS, "LO002N Admin klik username dan password");
 	}
 
-	@And("Admin klik button simpan klik2")
-	public void admin_klik_button_simpan_klik2() {
+	@And("LO002N Admin klik button simpan klik")
+	public void admin_klik_button_simpan_klik() {
 		JCAdminLogin.btnSimpan();
-		extentTest.log(LogStatus.PASS, "Admin klik button simpan klik2");
+		extentTest.log(LogStatus.PASS, "LO002N Admin klik button simpan klik");
 	}
 
-	@Then("Admin gagal login klik submit2")
-	public void admin_gagal_login_klik_submit2() {
+	@Then("LO002N Admin gagal login klik submit")
+	public void admin_gagal_login_klik_submit() {
 		assertTrue(JCAdminLogin.getTxtKosong(5).contains("Oops..."));
-		extentTest.log(LogStatus.PASS, "Admin gagal login klik submit2");
+		extentTest.log(LogStatus.PASS, "LO002N Admin gagal login klik submit");
 	}
 
 //	Scenario: Admin invalid login input username
-	@When("Admin input username2")
-	public void admin_input_username2() {
+	@When("LO003N Admin input username")
+	public void admin_input_username() {
 		JCAdminLogin.LoginPageInvalidUname("ucen1315@gmail.com");
-		extentTest.log(LogStatus.PASS, "Admin input username2");
+		extentTest.log(LogStatus.PASS, "LO003N Admin input username");
 	}
 
-	@And("Admin klik button simpan input uname2")
-	public void admin_klik_button_simpan_input_uname2() {
+	@And("LO003N Admin klik button simpan input uname")
+	public void admin_klik_button_simpan_input_uname() {
 		JCAdminLogin.btnSimpan();
-		extentTest.log(LogStatus.PASS, "Admin klik button simpan input uname2");
+		extentTest.log(LogStatus.PASS, "LO003N Admin klik button simpan input uname");
 	}
 
-	@Then("Admin gagal login input uname2")
-	public void admin_gagal_login_input_uname2() {
+	@Then("LO003N Admin gagal login input uname")
+	public void admin_gagal_login_input_uname() {
 		assertTrue(JCAdminLogin.getTxtKosong(5).contains("Oops..."));
-		extentTest.log(LogStatus.PASS, "Admin gagal login input uname2");
+		extentTest.log(LogStatus.PASS, "LO003N Admin gagal login input uname");
 	}
 
 //	Scenario: Admin invalid login input password
-	@When("Admin input password2")
-	public void admin_input_password2() {
+	@When("LO004N Admin input password")
+	public void admin_input_password() {
 		JCAdminLogin.LoginPageInvalidPass("a");
-		extentTest.log(LogStatus.PASS, "Admin input password2");
+		extentTest.log(LogStatus.PASS, "LO004N Admin input password");
 	}
 
-	@And("Admin klik button simpan input pass2")
-	public void admin_klik_button_simpan_input_pass2() {
+	@And("LO004N Admin klik button simpan input pass")
+	public void admin_klik_button_simpan_input_pass() {
 		JCAdminLogin.btnSimpan();
-		extentTest.log(LogStatus.PASS, "Admin klik button simpan input pass2");
+		extentTest.log(LogStatus.PASS, "LO004N Admin klik button simpan input pass");
 	}
 
-	@Then("Admin gagal login input pass2")
-	public void admin_gagal_login_input_pass2() {
+	@Then("LO004N Admin gagal login input pass")
+	public void admin_gagal_login_input_pass() {
 		assertTrue(JCAdminLogin.getTxtKosong(5).contains("Oops..."));
-		extentTest.log(LogStatus.PASS, "Admin gagal login input pass2");
+		extentTest.log(LogStatus.PASS, "LO004N Admin gagal login input pass");
 	}
 
 //	Scenario: Admin invalid login input password uppercase
-	@When("Admin input username dan password upper2")
-	public void admin_input_username_dan_password_upper2() {
+	@When("LO005N Admin input username dan password upper")
+	public void admin_input_username_dan_password_upper() {
 		JCAdminLogin.LoginPageValid("ucen1315@gmail.com", "A");
-		extentTest.log(LogStatus.PASS, "Admin input username dan password upper2");
+		extentTest.log(LogStatus.PASS, "LO005N Admin input username dan password upper");
 	}
 
-	@And("Admin klik button simpan input pass upper2")
-	public void admin_klik_button_simpan_input_pass_upper2() {
+	@And("LO005N Admin klik button simpan input pass upper")
+	public void admin_klik_button_simpan_input_pass_upper() {
 		JCAdminLogin.btnSimpan();
-		extentTest.log(LogStatus.PASS, "Admin klik button simpan input pass upper2");
+		extentTest.log(LogStatus.PASS, "LO005N Admin klik button simpan input pass upper");
 	}
 
-	@Then("Admin gagal login input pass upper2")
-	public void admin_gagal_login_input_pass_upper2() {
+	@Then("LO005N Admin gagal login input pass upper")
+	public void admin_gagal_login_input_pass_upper() {
 		assertTrue(JCAdminLogin.getTxtSalah(5).contains("Username Atau Password Salah"));
-		extentTest.log(LogStatus.PASS, "Admin gagal login input pass upper2");
+		extentTest.log(LogStatus.PASS, "LO005N Admin gagal login input pass upper");
 	}
 
 //	Scenario: Admin invalid login upper
-	@When("Admin input upper username dan password2")
-	public void admin_input_upper_username_dan_password2() {
+	@When("LO006N Admin input upper username dan password")
+	public void admin_input_upper_username_dan_password() {
 		JCAdminLogin.LoginPageInvalid("UCEN1315@GMAIL.COM", "A");
-		extentTest.log(LogStatus.PASS, "Admin input upper username dan password2");
+		extentTest.log(LogStatus.PASS, "LO006N Admin input upper username dan password");
 	}
 
-	@And("Admin klik button simpan upper2")
-	public void admin_klik_button_simpan_upper2() {
+	@And("LO006N Admin klik button simpan upper")
+	public void admin_klik_button_simpan_upper() {
 		JCAdminLogin.btnSimpan();
-		extentTest.log(LogStatus.PASS, "Admin klik button simpan upper2");;
+		extentTest.log(LogStatus.PASS, "LO006N Admin klik button simpan upper");;
 	}
 
-	@Then("Admin gagal login upper2")
-	public void admin_gagal_login_upper2() {
+	@Then("LO006N Admin gagal login upper")
+	public void admin_gagal_login_upper() {
 		assertTrue(JCAdminLogin.getTxtSalah(5).contains("Username Atau Password Salah"));
-		extentTest.log(LogStatus.PASS, "Admin gagal login upper2");
+		extentTest.log(LogStatus.PASS, "LO006N Admin gagal login upper");
 	}
 
 //	Scenario: Admin invalid login input spasi
-	@When("Admin input username dan password spasi2")
-	public void admin_input_username_dan_password_spasi2() {
+	@When("LO007N Admin input username dan password spasi")
+	public void admin_input_username_dan_password_spasi() {
 		JCAdminLogin.LoginPageInvalid(" ", " ");
-		extentTest.log(LogStatus.PASS, "Admin input username dan password spasi2");
+		extentTest.log(LogStatus.PASS, "LO007N Admin input username dan password spasi");
 	}
 
-	@And("Admin klik button simpan spasi2")
-	public void admin_klik_button_simpan_spasi2() {
+	@And("LO007N Admin klik button simpan spasi")
+	public void admin_klik_button_simpan_spasi() {
 		JCAdminLogin.btnSimpan();
-		extentTest.log(LogStatus.PASS, "Admin klik button simpan spasi2");
+		extentTest.log(LogStatus.PASS, "LO007N Admin klik button simpan spasi");
 	}
 
-	@Then("Admin gagal login input spasi2")
-	public void admin_gagal_login_input_spasi2() {
+	@Then("LO007N Admin gagal login input spasi")
+	public void admin_gagal_login_input_spasi() {
 		assertTrue(JCAdminLogin.getTxtSalah(5).contains("Username Atau Password Salah"));
-		extentTest.log(LogStatus.PASS, "Admin gagal login input spasi2");
+		extentTest.log(LogStatus.PASS, "LO007N Admin gagal login input spasi");
 	}
 
 //	Scenario: Admin invalid login user tanpa format email
-	@When("Admin input username dan password tanpa format2")
-	public void admin_input_username_dan_password_tanpa_format2() {
+	@When("LO008N Admin input username dan password tanpa format")
+	public void admin_input_username_dan_password_tanpa_format() {
 		JCAdminLogin.LoginPageInvalid("ucen1315", "a");
-		extentTest.log(LogStatus.PASS, "Admin input username dan password tanpa format2");
+		extentTest.log(LogStatus.PASS, "LO008N Admin input username dan password tanpa format");
 	}
 
-	@And("Admin klik button simpan tanpa format2")
-	public void admin_klik_button_simpan_tanpa_format2() {
+	@And("LO008N Admin klik button simpan tanpa format")
+	public void admin_klik_button_simpan_tanpa_format() {
 		JCAdminLogin.btnSimpan();
-		extentTest.log(LogStatus.PASS, "Admin klik button simpan tanpa format2");
+		extentTest.log(LogStatus.PASS, "LO008N Admin klik button simpan tanpa format");
 	}
 
-	@Then("Admin gagal login tanpa format2")
-	public void admin_gagal_login_tanpa_format2() {
+	@Then("LO008N Admin gagal login tanpa format")
+	public void admin_gagal_login_tanpa_format() {
 		assertTrue(JCAdminLogin.getTxtSalah(5).contains("Username Atau Password Salah"));
-		extentTest.log(LogStatus.PASS, "Admin gagal login input tanpa format2");
+		extentTest.log(LogStatus.PASS, "LO008N Admin gagal login input tanpa format");
 	}
 
 }
