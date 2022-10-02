@@ -52,9 +52,9 @@ public class JCAdminLoginValidImpl {
 	}
 
 //	user valid upper
-	@When("^Admin input (.*) dan (.*) upper$")
+	@When("Admin input username dan password upper")
 	public void admin_input_username_dan_password_upper(String user, String pass) {
-	    JCAdminLogin.LoginPageValid(user, pass);
+	    JCAdminLogin.LoginPageValid("UCEN1315@GMAIL.COM", "a");
 		extentTest.log(LogStatus.PASS, "Admin input username dan password upper");
 	}
 
@@ -71,9 +71,9 @@ public class JCAdminLoginValidImpl {
 	}
 
 //	user valid uplow
-	@When("^Admin input (.*) dan (.*) uplow$")
+	@When("Admin input username dan password uplow")
 	public void admin_input_username_dan_password_uplow(String usern, String passw) {
-		JCAdminLogin.LoginPageValid(usern, passw);
+		JCAdminLogin.LoginPageValid("Ucen1315@Gmail.com", "a");
 		extentTest.log(LogStatus.PASS, "Admin input username dan password upper");
 	}
 

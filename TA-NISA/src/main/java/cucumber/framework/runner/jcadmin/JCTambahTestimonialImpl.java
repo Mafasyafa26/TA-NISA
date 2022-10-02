@@ -8,10 +8,8 @@ import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 
 import cucumber.framework.constant.Constants;
-import cucumber.framework.page.hrms.LoginPage;
 import cucumber.framework.page.jcadmin.JCAdminLoginPage;
 import cucumber.framework.page.jcadmin.JCAdminTestimonial;
-import cucumber.framework.runner.hrms.sceneoutlinefix.SceneOutlineHooks;
 import cucumber.framework.utils.Utils;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
