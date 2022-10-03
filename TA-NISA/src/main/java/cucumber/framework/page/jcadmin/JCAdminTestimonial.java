@@ -5,6 +5,7 @@ import java.awt.Robot;
 import java.awt.Toolkit;
 import java.awt.datatransfer.StringSelection;
 import java.awt.event.KeyEvent;
+import java.io.File;
 import java.time.Duration;
 
 import org.openqa.selenium.By;
@@ -24,7 +25,9 @@ import cucumber.framework.utils.Utils;
 public class JCAdminTestimonial extends JCAdminLoginPage {
 	private WebDriver driver;
 	private String strDelay = Constants.GLOB_PARAM_DELAY;
-
+	private String lokasiFileGambarTambah = "src\\main\\resources\\gambarnisa\\nycta.jpg";
+	private String lokasiFileGambarEdit = "src\\main\\resources\\gambarnisa\\aliando.jpeg";
+	
 	public JCAdminTestimonial() {
 		this.driver = DriverSingleton.getDriver();
 		PageFactory.initElements(driver, this);
@@ -56,20 +59,27 @@ public class JCAdminTestimonial extends JCAdminLoginPage {
 //	data yang akan diedit 
 	@FindBy(xpath ="//figure[1]//a[1]//img[1]")
 	private WebElement editPertama;
-	
 	@FindBy(xpath ="//figure[14]//a[1]//img[1]")
 	private WebElement editData;
-	
 	@FindBy(xpath = "//input[@name='mysubmit']")
 	private WebElement btnSubmit;
-	
 	@FindBy(xpath = "//input[@value='Pilih Gambar Ulang']")
 	private WebElement uploadUlang;
 	
+//	cari data
+	@FindBy(xpath ="//input[@placeholder='Search Nama Peserta']")
+	private WebElement fieldSearch;
+	@FindBy(xpath ="/html[1]/body[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[1]/div[1]/div[3]/div[1]/b[1]")
+	private WebElement txtTotal;
+	
+	
+//	MENAMBAH DATA
 	public void tambahDataTestimonialPublish(String statss){
-		uploadFile("C:\\Users\\NEXSOFT\\Downloads\\shutterstock.jpeg");
 		Utils.delay(3, strDelay);
-		this.nama.sendKeys("Budi");
+		File myFile = new File(lokasiFileGambarTambah);
+		uploadFile(myFile);
+		Utils.delay(3, strDelay);
+		this.nama.sendKeys("Nycta");
 		Utils.delay(3, strDelay);
 		Select selPublish = new Select(this.selPublish);
 		selPublish.selectByVisibleText(statss);
@@ -79,6 +89,12 @@ public class JCAdminTestimonial extends JCAdminLoginPage {
 		selRating.click();
 		pilihRating(2);
 		Utils.delay(3, strDelay);
+	}
+	
+	public void uploadFile(File fileInput){
+	Utils.delay(1, strDelay);
+	String lokasiFile = fileInput.getAbsolutePath();
+	this.upload.sendKeys(lokasiFile);
 	}
 	
 	// MENGEDIT DATA
@@ -96,7 +112,8 @@ public class JCAdminTestimonial extends JCAdminLoginPage {
 		
 		public void editGambar() {
 			uploadUlang.click();
-			uploadUlangAction("C:\\Users\\NEXSOFT\\Downloads\\aliando.jpeg");
+			File myFile = new File(lokasiFileGambarEdit);
+			uploadUlangAction(myFile);
 			Utils.delay(3, strDelay);
 		}
 		
@@ -104,15 +121,10 @@ public class JCAdminTestimonial extends JCAdminLoginPage {
 			this.editPertama.click();
 		}
 		
-		public void uploadFile(String foto){
-		Utils.delay(1, strDelay);
-		this.upload.sendKeys(foto);
-		}
-		
-
-		public static void uploadUlangAction(String lokasiFile) {
+		public static void uploadUlangAction(File fileInput) {
 			// creating object of Robot class
 		    Robot rb;
+		    String lokasiFile = fileInput.getAbsolutePath();
 			try {
 				rb = new Robot();
 			    // copying File path to Clipboard
@@ -136,16 +148,30 @@ public class JCAdminTestimonial extends JCAdminLoginPage {
 				e.printStackTrace();
 			}
 		}
-	
-		public void clickSimpan() {
+		
+//		MENCARI DATA
+		
+		public void searchNamaPeserta() {
+			this.fieldSearch.sendKeys("Aliando Syarif");
+			Utils.delay(2, strDelay);
+		}
+
+		public void clickField() {
 			Utils.fullScroll();;
 			Utils.delay(1, strDelay);
-			this.btnSubmit.click();
+			this.fieldSearch.click();
 		}
 		
-		public String getTxtTestimonial() {
-		return new WebDriverWait(driver, Duration.ofSeconds(15))
-				.until(ExpectedConditions.visibilityOf(txtLaman)).getText();
+		public void tekanEnter() {
+			Robot robot;
+			try {
+				robot = new Robot();
+				robot.keyPress(KeyEvent.VK_ENTER);
+				robot.keyRelease(KeyEvent.VK_ENTER);
+			} catch (AWTException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 		
 		public void goToHome() {
@@ -159,7 +185,24 @@ public class JCAdminTestimonial extends JCAdminLoginPage {
 		public void goToTambahTesti() {
 		this.btnTambahhTestimonial.click();
 		}
-	
+		
+		public void clickSimpan() {
+			Utils.fullScroll();;
+			Utils.delay(1, strDelay);
+			this.btnSubmit.click();
+		}
+		
+		public String getTxtTestimonial() {
+		return new WebDriverWait(driver, Duration.ofSeconds(15))
+				.until(ExpectedConditions.visibilityOf(txtLaman)).getText();
+		}
+		
+		public String getTxtSearch() {
+			return new WebDriverWait(driver, Duration.ofSeconds(15))
+					.until(ExpectedConditions.visibilityOf(txtTotal)).getText();
+			}
+		
+		
 //		hapus kolom edit (steril)
 		public void clearField() {
 		try {

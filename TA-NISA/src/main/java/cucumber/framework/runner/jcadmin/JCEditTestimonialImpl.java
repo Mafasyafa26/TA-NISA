@@ -23,8 +23,8 @@ public class JCEditTestimonialImpl {
 		extentTest = JCAdminHooks.extentTest;
 		driver.get(Constants.URL_JCADMIN_LOGIN);
 		JCAdminTes = new JCAdminTestimonial();
-		
 	}
+	
 	//INI BACKGROUND
 	@When("Admin login dan membuka halaman testimonials")
 	public void admin_login_dan_membuka_halaman_testimonial() {
