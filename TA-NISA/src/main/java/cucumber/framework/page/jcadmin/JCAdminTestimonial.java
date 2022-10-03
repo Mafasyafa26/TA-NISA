@@ -27,6 +27,7 @@ public class JCAdminTestimonial extends JCAdminLoginPage {
 	private String strDelay = Constants.GLOB_PARAM_DELAY;
 	private String lokasiFileGambarTambah = "src\\main\\resources\\gambarnisa\\nycta.jpg";
 	private String lokasiFileGambarEdit = "src\\main\\resources\\gambarnisa\\aliando.jpeg";
+	private String lokasiFileGambarSearch = "src\\main\\resources\\gambarnisa\\angga.jpg";
 	
 	public JCAdminTestimonial() {
 		this.driver = DriverSingleton.getDriver();
@@ -59,8 +60,6 @@ public class JCAdminTestimonial extends JCAdminLoginPage {
 //	data yang akan diedit 
 	@FindBy(xpath ="//figure[1]//a[1]//img[1]")
 	private WebElement editPertama;
-	@FindBy(xpath ="//figure[14]//a[1]//img[1]")
-	private WebElement editData;
 	@FindBy(xpath = "//input[@name='mysubmit']")
 	private WebElement btnSubmit;
 	@FindBy(xpath = "//input[@value='Pilih Gambar Ulang']")
@@ -71,7 +70,6 @@ public class JCAdminTestimonial extends JCAdminLoginPage {
 	private WebElement fieldSearch;
 	@FindBy(xpath ="/html[1]/body[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[1]/div[1]/div[3]/div[1]/b[1]")
 	private WebElement txtTotal;
-	
 	
 //	MENAMBAH DATA
 	public void tambahDataTestimonialPublish(String statss){
@@ -98,6 +96,11 @@ public class JCAdminTestimonial extends JCAdminLoginPage {
 	}
 	
 	// MENGEDIT DATA
+
+	public void editClickDataPertama() {
+		this.editPertama.click();
+	}
+	
 		public void editNamaPeserta() {
 			editNamaPeserta.clear();
 			this.editNamaPeserta.sendKeys("Aliando Syarif");
@@ -117,11 +120,7 @@ public class JCAdminTestimonial extends JCAdminLoginPage {
 			Utils.delay(3, strDelay);
 		}
 		
-		public void editClickDataPertama() {
-			this.editPertama.click();
-		}
-		
-		public static void uploadUlangAction(File fileInput) {
+		public void uploadUlangAction(File fileInput) {
 			// creating object of Robot class
 		    Robot rb;
 		    String lokasiFile = fileInput.getAbsolutePath();
@@ -155,7 +154,67 @@ public class JCAdminTestimonial extends JCAdminLoginPage {
 			this.fieldSearch.sendKeys("Aliando Syarif");
 			Utils.delay(2, strDelay);
 		}
+		
+//		MENCARI DAN EDIT DATA
 
+		public void searchEditNamaPeserta() {
+			this.fieldSearch.sendKeys("Ahmad Saifur");
+			Utils.delay(2, strDelay);
+		}
+		
+		public void editClickDataSearch() {
+			this.editPertama.click();
+		}
+		
+		public void editGambarSearch() {
+			uploadUlang.click();
+			File myFile = new File(lokasiFileGambarSearch);
+			uploadUlangActionSearch(myFile);
+			Utils.delay(3, strDelay);
+		}
+		
+		public void uploadUlangActionSearch(File fileInput) {
+			// creating object of Robot class
+		    Robot rb;
+		    String lokasiFile = fileInput.getAbsolutePath();
+			try {
+				rb = new Robot();
+			    // copying File path to Clipboard
+			    StringSelection str = new StringSelection(lokasiFile);
+			    System.out.println(str+" ini dari upload search ganti");
+			    Toolkit.getDefaultToolkit().getSystemClipboard().setContents(str, null);
+			    Utils.delay(3, strDelay);
+			    
+			     // press Contol+V for pasting
+			     rb.keyPress(KeyEvent.VK_CONTROL);
+			     rb.keyPress(KeyEvent.VK_V);
+			 
+			    // release Contol+V for pasting
+			    rb.keyRelease(KeyEvent.VK_CONTROL);
+			    rb.keyRelease(KeyEvent.VK_V);
+			 
+			    // for pressing and releasing Enter
+			    rb.keyPress(KeyEvent.VK_ENTER);
+			    rb.keyRelease(KeyEvent.VK_ENTER);
+
+			} catch (AWTException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		
+		public void editNamaPesertaSearch() {
+			editNamaPeserta.clear();
+			this.editNamaPeserta.sendKeys("Angga Yunanda");
+			Utils.delay(2, strDelay);
+		}
+		
+		public void editIsiTestiSearch() {
+			isiTesti.clear();
+			this.isiTesti.sendKeys("JuaraCoding menambah pengetahuan tentang kepemahaman di dunia pemrogramman");
+			Utils.delay(2, strDelay);
+		}
+		
 		public void clickField() {
 			Utils.fullScroll();;
 			Utils.delay(1, strDelay);

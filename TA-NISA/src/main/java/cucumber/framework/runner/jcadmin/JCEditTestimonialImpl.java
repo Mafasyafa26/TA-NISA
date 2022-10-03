@@ -84,7 +84,6 @@ public class JCEditTestimonialImpl {
 
 	@Then("TE035P Admin berhasil edit nama peserta")
 	public void admin_berhasil_edit_nama_peserta() {
-		
 		extentTest.log(LogStatus.PASS,"TE035P nama peserta sudah diedit");
 	}
 	
@@ -108,7 +107,6 @@ public class JCEditTestimonialImpl {
 
 	@Then("TE036P Admin berhasil edit isi testimonial")
 	public void admin_berhasil_edit_isi_testimonial() {
-		
 		extentTest.log(LogStatus.PASS, "TE036P Admin berhasil edit isi testimonial");
 	}
 

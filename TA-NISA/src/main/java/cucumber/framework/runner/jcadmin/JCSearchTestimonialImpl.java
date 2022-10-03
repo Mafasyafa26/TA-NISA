@@ -35,12 +35,6 @@ public class JCSearchTestimonialImpl {
 	}
 
 //	search nama
-//	@When("TE039P Admin klik field search nama peserta")
-//	public void te039p_admin_klik_field_search_nama_peserta() {
-//	    JCAdminTes.clickField();
-//	    extentTest.log(LogStatus.PASS, "TE039P Admin klik field search nama peserta");
-//	}
-
 	@When("TE039P Admin mengetikkan nama peserta")
 	public void te039p_admin_mengetikkan_nama_peserta() {
 	    JCAdminTes.searchNamaPeserta();
