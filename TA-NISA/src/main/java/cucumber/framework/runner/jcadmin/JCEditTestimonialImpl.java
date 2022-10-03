@@ -40,52 +40,76 @@ public class JCEditTestimonialImpl {
 	}
 	//INI AKHIR BACKGROUND
 	
+	
+//	edit gambar peserta
+	@When("TE028P Admin mengedit gambar peserta")
+	public void admin_mengedit_gambar_peserta() {
+		System.out.println("INI DARI ADMIN EDIT GAMBAR");
+//	    Utils.fullScroll();
+		Utils.delay(2, strDelay);
+	    JCAdminTes.editGambar();
+	    Utils.delay(2, strDelay);
+	    extentTest.log(LogStatus.PASS, "TE028P Admin mengedit gambar peserta");
+	}
+
+	@And("TE028P Admin menekan tombol simpan edit gambar peserta")
+	public void admin_menekan_tombol_simpan_edit_gambar_peserta() {
+		Utils.fullScroll();
+		JCAdminTes.clickSimpan();
+		extentTest.log(LogStatus.PASS, "TE028P Admin menekan tombol simpan edit gambar peserta");
+	}
+
+	@Then("TE028P Admin berhasil edit gambar peserta")
+	public void admin_berhasil_edit_gambar_peserta() {
+	    extentTest.log(LogStatus.PASS, "TE028P Admin berhasil edit gambar peserta");
+	}
+	
 //	edit nama peserta
-	@When("Admin mengedit nama peserta")
+	@When("TE035P Admin mengedit nama peserta")
 	public void admin_mengedit_nama_peserta() {
 		System.out.println("INI DARI ADMIN EDIT NAMA");
 //	    Utils.fullScroll();
 		Utils.delay(2, strDelay);
 	    JCAdminTes.editNamaPeserta();
 	    Utils.delay(2, strDelay);
-	    extentTest.log(LogStatus.PASS, "Admin mengedit nama peserta");
+	    extentTest.log(LogStatus.PASS, "TE035P Admin mengedit nama peserta");
 	}
 
-	@And("Admin menekan tombol simpan edit nama peserta")
+	@And("TE035P Admin menekan tombol simpan edit nama peserta")
 	public void admin_menekan_tombol_simpan_edit_nama_peserta() {
 		Utils.fullScroll();
 		JCAdminTes.clickSimpan();
-		extentTest.log(LogStatus.PASS, "Admin menekan tombol simpan edit nama peserta");
+		extentTest.log(LogStatus.PASS, "TE035P Admin menekan tombol simpan edit nama peserta");
 	}
 
-	@Then("Admin berhasil edit nama peserta")
+	@Then("TE035P Admin berhasil edit nama peserta")
 	public void admin_berhasil_edit_nama_peserta() {
 		
-	    System.out.println("nama peserta sudah diedit");
+		extentTest.log(LogStatus.PASS,"TE035P nama peserta sudah diedit");
 	}
 	
 //	edit isi
-	@When("Admin mengedit isi testimonial")
+	@When("TE036P Admin mengedit isi testimonial")
 	public void admin_mengedit_isi_testimonial() {
 		System.out.println("INI DARI ADMIN EDIT ISI");
 //	    Utils.fullScroll();
 		Utils.delay(2, strDelay);
 	    JCAdminTes.editIsiTesti();
 	    Utils.delay(2, strDelay);
-	    extentTest.log(LogStatus.PASS, "Admin mengedit isi testimonial");
+	    extentTest.log(LogStatus.PASS, "TE036P Admin mengedit isi testimonial");
 	}
 
-	@And("Admin menekan tombol simpan edit isi testimonial")
+	@And("TE036P Admin menekan tombol simpan edit isi testimonial")
 	public void admin_menekan_tombol_simpan_edit_isi_testimonial() {
 		Utils.fullScroll();
 		JCAdminTes.clickSimpan();
-		extentTest.log(LogStatus.PASS, "Admin menekan tombol simpan edit isi testimonial");
+		extentTest.log(LogStatus.PASS, "TE036P Admin menekan tombol simpan edit isi testimonial");
 	}
 
-	@Then("Admin berhasil edit isi testimonial")
+	@Then("TE036P Admin berhasil edit isi testimonial")
 	public void admin_berhasil_edit_isi_testimonial() {
 		
-	    System.out.println("nama peserta sudah diedit");
+		extentTest.log(LogStatus.PASS, "TE036P Admin berhasil edit isi testimonial");
 	}
 
 }

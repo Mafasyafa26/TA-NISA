@@ -63,6 +63,9 @@ public class JCAdminTestimonial extends JCAdminLoginPage {
 	@FindBy(xpath = "//input[@name='mysubmit']")
 	private WebElement btnSubmit;
 	
+	@FindBy(xpath = "//input[@value='Pilih Gambar Ulang']")
+	private WebElement uploadUlang;
+	
 	public void tambahDataTestimonialPublish(String statss){
 		uploadFile("C:\\Users\\NEXSOFT\\Downloads\\shutterstock.jpeg");
 		Utils.delay(3, strDelay);
@@ -81,7 +84,7 @@ public class JCAdminTestimonial extends JCAdminLoginPage {
 	// MENGEDIT DATA
 		public void editNamaPeserta() {
 			editNamaPeserta.clear();
-			this.editNamaPeserta.sendKeys("Aliando Syarif Rahmatullah");
+			this.editNamaPeserta.sendKeys("Aliando Syarif");
 			Utils.delay(2, strDelay);
 		}
 		
@@ -91,6 +94,12 @@ public class JCAdminTestimonial extends JCAdminLoginPage {
 			Utils.delay(2, strDelay);
 		}
 		
+		public void editGambar() {
+			uploadUlang.click();
+			uploadUlangAction("C:\\Users\\NEXSOFT\\Downloads\\aliando.jpeg");
+			Utils.delay(3, strDelay);
+		}
+		
 		public void editClickDataPertama() {
 			this.editPertama.click();
 		}
@@ -98,6 +107,34 @@ public class JCAdminTestimonial extends JCAdminLoginPage {
 		public void uploadFile(String foto){
 		Utils.delay(1, strDelay);
 		this.upload.sendKeys(foto);
+		}
+		
+
+		public static void uploadUlangAction(String lokasiFile) {
+			// creating object of Robot class
+		    Robot rb;
+			try {
+				rb = new Robot();
+			    // copying File path to Clipboard
+			    StringSelection str = new StringSelection(lokasiFile);
+			    Toolkit.getDefaultToolkit().getSystemClipboard().setContents(str, null);
+			 
+			     // press Contol+V for pasting
+			     rb.keyPress(KeyEvent.VK_CONTROL);
+			     rb.keyPress(KeyEvent.VK_V);
+			 
+			    // release Contol+V for pasting
+			    rb.keyRelease(KeyEvent.VK_CONTROL);
+			    rb.keyRelease(KeyEvent.VK_V);
+			 
+			    // for pressing and releasing Enter
+			    rb.keyPress(KeyEvent.VK_ENTER);
+			    rb.keyRelease(KeyEvent.VK_ENTER);
+
+			} catch (AWTException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 	
 		public void clickSimpan() {
@@ -153,6 +190,7 @@ public class JCAdminTestimonial extends JCAdminLoginPage {
 			e.printStackTrace();
 			}
 		}
+		
 	
 	
 //	driver.get("https://dev.ptdika.com/web_jc_v2/index.php/admin#");
