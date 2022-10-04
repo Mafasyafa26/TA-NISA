@@ -25,8 +25,14 @@ import cucumber.framework.utils.Utils;
 public class JCAdminTestimonial extends JCAdminLoginPage {
 	private WebDriver driver;
 	private String strDelay = Constants.GLOB_PARAM_DELAY;
+	
+//	deklarasi file gambar
 	private String lokasiFileGambarTambahNoAct = "src\\main\\resources\\gambarnisa\\raisa.jpg";
 	private String lokasiFileGambarTambahAct = "src\\main\\resources\\gambarnisa\\nadin.jpg";
+	private String lokasiFileGambarTambahForAct = "src\\main\\resources\\gambarnisa\\kartun.gif";
+	private String lokasiFileGambarTambahForNoAct = "src\\main\\resources\\gambarnisa\\dog.webp";
+	private String lokasiFileGambarTambahKarAct = "src\\main\\resources\\gambarnisa\\duta.jpg";
+	private String lokasiFileGambarTambahKarNoAct = "src\\main\\resources\\gambarnisa\\tulus.jpg";
 	private String lokasiFileGambarEdit = "src\\main\\resources\\gambarnisa\\aliando.jpeg";
 	private String lokasiFileGambarSearch = "src\\main\\resources\\gambarnisa\\angga.jpg";
 	
@@ -57,6 +63,9 @@ public class JCAdminTestimonial extends JCAdminLoginPage {
 	private WebElement isiTesti;
 	@FindBy(xpath = "/html[1]/body[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[1]/div[1]/form[1]/div[2]/div[1]/div[5]/div[1]/select[1]")
 	private WebElement selRating;	
+//	Karakter (<|>|'|") tidak diizinkan
+	@FindBy(xpath = "//div[@id='pageWrapper']//div[4]//div[1]//div[1]")
+	private WebElement txtIsi;
 	
 //	data yang akan diedit 
 	@FindBy(xpath ="//figure[1]//a[1]//img[1]")
@@ -102,6 +111,42 @@ public class JCAdminTestimonial extends JCAdminLoginPage {
 		selPublish.selectByVisibleText("No Active");
 		Utils.delay(3, strDelay);
 		this.isiTesti.sendKeys("Apalah arti aku menunggu bila kamu tak sibuk lagi");
+		Utils.delay(3, strDelay);
+		selRating.click();
+		Integer intRate = Integer.parseInt(rate);
+		pilihRating(intRate);
+		Utils.delay(3, strDelay);
+	}
+	
+	public void tambahDataTestimonialActiveGambar(String rate){
+		Utils.delay(3, strDelay);
+		File myFile = new File(lokasiFileGambarTambahForAct);
+		uploadFile(myFile);
+		Utils.delay(3, strDelay);
+		this.nama.sendKeys("Kartun");
+		Utils.delay(3, strDelay);
+		Select selPublish = new Select(this.selPublish);
+		selPublish.selectByVisibleText("Active");
+		Utils.delay(3, strDelay);
+		this.isiTesti.sendKeys("Nexsoft Juara Coding best");
+		Utils.delay(3, strDelay);
+		selRating.click();
+		Integer intRate = Integer.parseInt(rate);
+		pilihRating(intRate);
+		Utils.delay(3, strDelay);
+	}
+	
+	public void tambahDataTestimonialNoActiveGambar(String rate){
+		Utils.delay(3, strDelay);
+		File myFile = new File(lokasiFileGambarTambahForNoAct);
+		uploadFile(myFile);
+		Utils.delay(3, strDelay);
+		this.nama.sendKeys("Cute");
+		Utils.delay(3, strDelay);
+		Select selPublish = new Select(this.selPublish);
+		selPublish.selectByVisibleText("No Active");
+		Utils.delay(3, strDelay);
+		this.isiTesti.sendKeys("Semangat menjalani kehidupan");
 		Utils.delay(3, strDelay);
 		selRating.click();
 		Integer intRate = Integer.parseInt(rate);

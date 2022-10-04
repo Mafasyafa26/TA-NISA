@@ -76,13 +76,53 @@ public class JCTambahTestimonialImpl {
 	@And("^(.*) Admin menekan tombol simpan testimonial no active$")
 	public void admin_menekan_tombol_simpan_testimonial_no_active(String strKode) {
 		JCAdminTes.clickSimpan();
-		extentTest.log(LogStatus.PASS, "Admin menekan tombol simpan testimonial active");
+		extentTest.log(LogStatus.PASS, "Admin menekan tombol simpan testimonial no active");
 	}
 
 	@Then("^(.*) Admin menambah testimonial noactive valid$")
 	public void admin_menambah_testimonial_noactive_valid(String strKode) {
 		assertTrue(JCAdminTes.getTxtTestimonial().contains("List Testimonial"));
 		extentTest.log(LogStatus.PASS, "Admin menambah testimonial noactive valid");
+	}
+	
+//	publish active format gambar
+	@When("^(.*) Admin mengisi format gambar dengan rating (.*) active$")
+	public void admin_mengisi_format_gambar_dengan_rating_angka_rating_active(String strKode, String strRate) {
+		Utils.fullScroll();
+		JCAdminTes.tambahDataTestimonialActiveGambar(strRate);
+		extentTest.log(LogStatus.PASS, "Admin mengisi format gambar dengan rating "+strRate+ " publish active");
+	}
+
+	@And("^(.*) Admin menekan tombol simpan testimonial format gambar active$")
+	public void admin_menekan_tombol_simpan_testimonial_format_gambar_active(String strKode) {
+		JCAdminTes.clickSimpan();
+		extentTest.log(LogStatus.PASS, "Admin menekan tombol simpan testimonial format gambar active");
+	}
+
+	@Then("^(.*) Admin menambah testimonial format gambar active valid$")
+	public void admin_menambah_testimonial_format_gambar_active_valid(String strKode) {
+		assertTrue(JCAdminTes.getTxtTestimonial().contains("List Testimonial"));
+		extentTest.log(LogStatus.PASS, "Admin menambah testimonial format gambar active valid");
+	}
+	
+//	publish no active format gambar
+	@When("^(.*) Admin tambah format gambar dengan rating (.*) no active$")
+	public void admin_tambah_format_gambar_dengan_rating_angka_rating_no_active(String strKode, String strRate) {
+		Utils.fullScroll();
+		JCAdminTes.tambahDataTestimonialNoActiveGambar(strRate);
+		extentTest.log(LogStatus.PASS, "Admin tambah format gambar dengan rating "+strRate+ " publish no active");
+	}
+
+	@And("^(.*) Admin klik tombol simpan testimonial format gambar no active$")
+	public void admin_klik_tombol_simpan_testimonial_format_gambar_no_active(String strKode) {
+		JCAdminTes.clickSimpan();
+		extentTest.log(LogStatus.PASS, "Admin klik tombol simpan testimonial format gambar no active");
+	}
+
+	@Then("^(.*) Admin tambah testimonial format gambar no active valid$")
+	public void admin_tambah_testimonial_format_gambar_no_active_valid(String strKode) {
+		assertTrue(JCAdminTes.getTxtTestimonial().contains("List Testimonial"));
+		extentTest.log(LogStatus.PASS, "Admin tambah testimonial format gambar no active valid");
 	}
 	
 }
