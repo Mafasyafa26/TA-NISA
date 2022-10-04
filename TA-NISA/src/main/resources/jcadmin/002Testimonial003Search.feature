@@ -3,6 +3,6 @@ Feature: Search Testimonial
 		When Admin login dan membuka halaman testimonials search
 		
 		Scenario: Mencari nama peserta
-  When TE039P Admin mengetikkan nama peserta 
-  And TE039P Admin menekan enter pada keyboard
-  Then TE039P Data ditemukan
+  When TE050P Admin mengetikkan nama peserta 
+  And TE050P Admin menekan enter pada keyboard
+  Then TE050P Data ditemukan

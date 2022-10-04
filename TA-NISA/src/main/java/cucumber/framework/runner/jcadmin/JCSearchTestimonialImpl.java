@@ -35,21 +35,21 @@ public class JCSearchTestimonialImpl {
 	}
 
 //	search nama
-	@When("TE039P Admin mengetikkan nama peserta")
-	public void te039p_admin_mengetikkan_nama_peserta() {
+	@When("TE050P Admin mengetikkan nama peserta")
+	public void te050p_admin_mengetikkan_nama_peserta() {
 	    JCAdminTes.searchNamaPeserta();
-		extentTest.log(LogStatus.PASS, "TE039P Admin mengetikkan nama peserta");
+		extentTest.log(LogStatus.PASS, "TE050P Admin mengetikkan nama peserta");
 	}
 
-	@And("TE039P Admin menekan enter pada keyboard")
-	public void te039p_admin_menekan_enter_pada_keyboard() {
+	@And("TE050P Admin menekan enter pada keyboard")
+	public void te050p_admin_menekan_enter_pada_keyboard() {
 		JCAdminTes.tekanEnter();
-		extentTest.log(LogStatus.PASS, "TE039P Admin menekan enter pada keyboard");
+		extentTest.log(LogStatus.PASS, "TE050P Admin menekan enter pada keyboard");
 	}
 
-	@Then("TE039P Data ditemukan")
-	public void te039p_data_ditemukan() {
+	@Then("TE050P Data ditemukan")
+	public void te050p_data_ditemukan() {
 		assertTrue(JCAdminTes.getTxtSearch().contains("Total Search"));
-		extentTest.log(LogStatus.PASS, "TE039P Data ditemukan");
+		extentTest.log(LogStatus.PASS, "TE050P Data ditemukan");
 	}
 }

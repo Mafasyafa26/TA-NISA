@@ -6,7 +6,7 @@
       <class name="cucumber.framework.runner.jcadmin.JCAdminRunner">
         <methods>
           <include name="setUpClass"/>
-          <include name="runScenario" invocation-numbers="9 10 11"/>
+          <include name="runScenario" invocation-numbers="62"/>
           <include name="tearDownClass"/>
         </methods>
       </class> <!-- cucumber.framework.runner.jcadmin.JCAdminRunner -->

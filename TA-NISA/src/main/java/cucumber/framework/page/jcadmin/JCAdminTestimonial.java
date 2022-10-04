@@ -110,7 +110,7 @@ public class JCAdminTestimonial extends JCAdminLoginPage {
 		Select selPublish = new Select(this.selPublish);
 		selPublish.selectByVisibleText("No Active");
 		Utils.delay(3, strDelay);
-		this.isiTesti.sendKeys("Apalah arti aku menunggu bila kamu tak sibuk lagi");
+		this.isiTesti.sendKeys("Apalah arti aku menunggu bila kamu tak sibuk lagiSalah satu yang paling nikmat dari kesempatan hidup adalah hari-hari baik yang datang bagi si yakin dan berusaha");
 		Utils.delay(3, strDelay);
 		selRating.click();
 		Integer intRate = Integer.parseInt(rate);
@@ -128,7 +128,7 @@ public class JCAdminTestimonial extends JCAdminLoginPage {
 		Select selPublish = new Select(this.selPublish);
 		selPublish.selectByVisibleText("Active");
 		Utils.delay(3, strDelay);
-		this.isiTesti.sendKeys("Nexsoft Juara Coding best");
+		this.isiTesti.sendKeys("Salah satu yang paling nikmat dari kesempatan hidup adalah hari-hari baik yang datang bagi si yakin dan berusaha");
 		Utils.delay(3, strDelay);
 		selRating.click();
 		Integer intRate = Integer.parseInt(rate);
@@ -147,6 +147,42 @@ public class JCAdminTestimonial extends JCAdminLoginPage {
 		selPublish.selectByVisibleText("No Active");
 		Utils.delay(3, strDelay);
 		this.isiTesti.sendKeys("Semangat menjalani kehidupan");
+		Utils.delay(3, strDelay);
+		selRating.click();
+		Integer intRate = Integer.parseInt(rate);
+		pilihRating(intRate);
+		Utils.delay(3, strDelay);
+	}
+	
+	public void tambahDataTestimonialActiveIsi(String rate){
+		Utils.delay(3, strDelay);
+		File myFile = new File(lokasiFileGambarTambahKarAct);
+		uploadFile(myFile);
+		Utils.delay(3, strDelay);
+		this.nama.sendKeys("Duta Sheila");
+		Utils.delay(3, strDelay);
+		Select selPublish = new Select(this.selPublish);
+		selPublish.selectByVisibleText("Active");
+		Utils.delay(3, strDelay);
+		this.isiTesti.sendKeys("<Hai>");
+		Utils.delay(3, strDelay);
+		selRating.click();
+		Integer intRate = Integer.parseInt(rate);
+		pilihRating(intRate);
+		Utils.delay(3, strDelay);
+	}
+	
+	public void tambahDataTestimonialNoActiveIsi(String rate){
+		Utils.delay(3, strDelay);
+		File myFile = new File(lokasiFileGambarTambahKarNoAct);
+		uploadFile(myFile);
+		Utils.delay(3, strDelay);
+		this.nama.sendKeys("Tulus");
+		Utils.delay(3, strDelay);
+		Select selPublish = new Select(this.selPublish);
+		selPublish.selectByVisibleText("No Active");
+		Utils.delay(3, strDelay);
+		this.isiTesti.sendKeys("/<Hallo>");
 		Utils.delay(3, strDelay);
 		selRating.click();
 		Integer intRate = Integer.parseInt(rate);
@@ -200,6 +236,54 @@ public class JCAdminTestimonial extends JCAdminLoginPage {
 			Utils.delay(3, strDelay);
 		}
 		
+		public void editActNoAct() {
+			Utils.delay(3, strDelay);
+			Select selPublish = new Select(this.selPublish);
+			selPublish.selectByVisibleText("No Active");
+		}
+		
+		public void editNoActAct() {
+			Utils.delay(3, strDelay);
+			Select selPublish = new Select(this.selPublish);
+			selPublish.selectByVisibleText("Active");
+		}
+		
+		public void editRatingNol() {
+			Utils.delay(3, strDelay);
+			Select selRating = new Select(this.selRating);
+			selRating.selectByVisibleText("0");
+			}
+		
+		public void editRatingSatu() {
+			Utils.delay(3, strDelay);
+			Select selRating = new Select(this.selRating);
+			selRating.selectByVisibleText("1");
+			}
+		
+		public void editRatingDua() {
+			Utils.delay(3, strDelay);
+			Select selRating = new Select(this.selRating);
+			selRating.selectByVisibleText("2");
+			}
+		
+		public void editRatingTiga() {
+			Utils.delay(3, strDelay);
+			Select selRating = new Select(this.selRating);
+			selRating.selectByVisibleText("3");
+			}
+		
+		public void editRatingEmpat() {
+			Utils.delay(3, strDelay);
+			Select selRating = new Select(this.selRating);
+			selRating.selectByVisibleText("4");
+			}
+		
+		public void editRatingLima() {
+			Utils.delay(3, strDelay);
+			Select selRating = new Select(this.selRating);
+			selRating.selectByVisibleText("5");
+			}
+		
 		public void uploadUlangAction(File fileInput) {
 			// creating object of Robot class
 		    Robot rb;
@@ -231,7 +315,7 @@ public class JCAdminTestimonial extends JCAdminLoginPage {
 //		MENCARI DATA
 		
 		public void searchNamaPeserta() {
-			this.fieldSearch.sendKeys("Aliando Syarif");
+			this.fieldSearch.sendKeys("Angga");
 			Utils.delay(2, strDelay);
 		}
 		
@@ -335,6 +419,11 @@ public class JCAdminTestimonial extends JCAdminLoginPage {
 		return new WebDriverWait(driver, Duration.ofSeconds(15))
 				.until(ExpectedConditions.visibilityOf(txtLaman)).getText();
 		}
+		
+		public String getTxtIsi() {
+			return new WebDriverWait(driver, Duration.ofSeconds(15))
+					.until(ExpectedConditions.visibilityOf(txtIsi)).getText();
+			}
 		
 		public String getTxtSearch() {
 			return new WebDriverWait(driver, Duration.ofSeconds(15))
