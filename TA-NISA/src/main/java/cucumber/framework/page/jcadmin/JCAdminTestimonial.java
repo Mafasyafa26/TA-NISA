@@ -25,7 +25,8 @@ import cucumber.framework.utils.Utils;
 public class JCAdminTestimonial extends JCAdminLoginPage {
 	private WebDriver driver;
 	private String strDelay = Constants.GLOB_PARAM_DELAY;
-	private String lokasiFileGambarTambah = "src\\main\\resources\\gambarnisa\\nycta.jpg";
+	private String lokasiFileGambarTambahNoAct = "src\\main\\resources\\gambarnisa\\raisa.jpg";
+	private String lokasiFileGambarTambahAct = "src\\main\\resources\\gambarnisa\\nadin.jpg";
 	private String lokasiFileGambarEdit = "src\\main\\resources\\gambarnisa\\aliando.jpeg";
 	private String lokasiFileGambarSearch = "src\\main\\resources\\gambarnisa\\angga.jpg";
 	
@@ -72,21 +73,55 @@ public class JCAdminTestimonial extends JCAdminLoginPage {
 	private WebElement txtTotal;
 	
 //	MENAMBAH DATA
-	public void tambahDataTestimonialPublish(String statss){
+	public void tambahDataTestimonialPublishActive(String rate){
 		Utils.delay(3, strDelay);
-		File myFile = new File(lokasiFileGambarTambah);
+		File myFile = new File(lokasiFileGambarTambahAct);
 		uploadFile(myFile);
 		Utils.delay(3, strDelay);
-		this.nama.sendKeys("Nycta");
+		this.nama.sendKeys("Nadin Amizah");
 		Utils.delay(3, strDelay);
 		Select selPublish = new Select(this.selPublish);
-		selPublish.selectByVisibleText(statss);
+		selPublish.selectByVisibleText("Active");
 		Utils.delay(3, strDelay);
-		this.isiTesti.sendKeys("Juara Coding the best");
+		this.isiTesti.sendKeys("Coding memang sedikit membuatku sibuk, tapi dengan juara coding membuatku tidak gabut lagi");
 		Utils.delay(3, strDelay);
 		selRating.click();
-		pilihRating(2);
+		Integer intRate = Integer.parseInt(rate);
+		pilihRating(intRate);
 		Utils.delay(3, strDelay);
+	}
+	
+	public void tambahDataTestimonialPublishNoActive(String rate){
+		Utils.delay(3, strDelay);
+		File myFile = new File(lokasiFileGambarTambahNoAct);
+		uploadFile(myFile);
+		Utils.delay(3, strDelay);
+		this.nama.sendKeys("Raisa");
+		Utils.delay(3, strDelay);
+		Select selPublish = new Select(this.selPublish);
+		selPublish.selectByVisibleText("No Active");
+		Utils.delay(3, strDelay);
+		this.isiTesti.sendKeys("Apalah arti aku menunggu bila kamu tak sibuk lagi");
+		Utils.delay(3, strDelay);
+		selRating.click();
+		Integer intRate = Integer.parseInt(rate);
+		pilihRating(intRate);
+		Utils.delay(3, strDelay);
+	}
+
+	public void pilihRating(int nilaiRate) {
+	try {
+		Robot rbt = new Robot();
+		for (int i= 0; i<nilaiRate;i++) {
+			rbt.keyPress(KeyEvent.VK_DOWN);
+			rbt.keyRelease(KeyEvent.VK_DOWN);
+		}
+		rbt.keyPress(KeyEvent.VK_ENTER);
+		rbt.keyRelease(KeyEvent.VK_ENTER);
+	} catch (AWTException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+		}
 	}
 	
 	public void uploadFile(File fileInput){
@@ -278,20 +313,6 @@ public class JCAdminTestimonial extends JCAdminLoginPage {
 			}
 		}
 		
-		public static void pilihRating(int nilaiRate) {
-		try {
-			Robot rbt = new Robot();
-			for (int i= 0; i<nilaiRate;i++) {
-				rbt.keyPress(KeyEvent.VK_DOWN);
-				rbt.keyRelease(KeyEvent.VK_DOWN);
-			}
-			rbt.keyPress(KeyEvent.VK_ENTER);
-			rbt.keyRelease(KeyEvent.VK_ENTER);
-		} catch (AWTException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-			}
-		}
 		
 	
 	

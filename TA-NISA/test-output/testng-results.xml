@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+<testng-results ignored="0" total="12" passed="12" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-10-03T13:59:32 WIB" name="Default suite" finished-at="2022-10-03T14:00:42 WIB" duration-ms="70136">
+  <suite started-at="2022-10-03T22:12:32 WIB" name="Default suite" finished-at="2022-10-03T22:18:18 WIB" duration-ms="345255">
     <groups>
       <group name="cucumber">
         <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumber.framework.runner.jcadmin.JCAdminRunner@4a83a74a]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2022-10-03T13:59:32 WIB" name="Default test" finished-at="2022-10-03T14:00:42 WIB" duration-ms="70136">
+    <test started-at="2022-10-03T22:12:32 WIB" name="Default test" finished-at="2022-10-03T22:18:18 WIB" duration-ms="345255">
       <class name="cucumber.framework.runner.jcadmin.JCAdminRunner">
-        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:cucumber.framework.runner.jcadmin.JCAdminRunner@4a83a74a]" started-at="2022-10-03T13:59:32 WIB" name="setUpClass" finished-at="2022-10-03T13:59:32 WIB" duration-ms="624" status="PASS">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:cucumber.framework.runner.jcadmin.JCAdminRunner@4a83a74a]" started-at="2022-10-03T22:12:32 WIB" name="setUpClass" finished-at="2022-10-03T22:12:33 WIB" duration-ms="733" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@7ead1d80]]>
+                <![CDATA[org.testng.TestRunner@571db8b4]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumber.framework.runner.jcadmin.JCAdminRunner@4a83a74a]" started-at="2022-10-03T13:59:32 WIB" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-10-03T14:00:11 WIB" duration-ms="38944" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumber.framework.runner.jcadmin.JCAdminRunner@4a83a74a]" started-at="2022-10-03T22:12:33 WIB" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-10-03T22:13:10 WIB" duration-ms="36365" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -37,7 +37,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumber.framework.runner.jcadmin.JCAdminRunner@4a83a74a]" started-at="2022-10-03T14:00:11 WIB" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-10-03T14:00:39 WIB" duration-ms="28178" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumber.framework.runner.jcadmin.JCAdminRunner@4a83a74a]" started-at="2022-10-03T22:13:10 WIB" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-10-03T22:13:38 WIB" duration-ms="28594" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -53,7 +53,167 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:cucumber.framework.runner.jcadmin.JCAdminRunner@4a83a74a]" started-at="2022-10-03T14:00:39 WIB" name="tearDownClass" finished-at="2022-10-03T14:00:42 WIB" duration-ms="2341" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumber.framework.runner.jcadmin.JCAdminRunner@4a83a74a]" started-at="2022-10-03T22:13:38 WIB" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-10-03T22:14:06 WIB" duration-ms="27727" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Menambah daftar testimonial active"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Tambah Testimonial"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumber.framework.runner.jcadmin.JCAdminRunner@4a83a74a]" started-at="2022-10-03T22:14:06 WIB" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-10-03T22:14:33 WIB" duration-ms="27343" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Menambah daftar testimonial active"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Tambah Testimonial"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumber.framework.runner.jcadmin.JCAdminRunner@4a83a74a]" started-at="2022-10-03T22:14:33 WIB" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-10-03T22:15:00 WIB" duration-ms="27175" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Menambah daftar testimonial active"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Tambah Testimonial"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumber.framework.runner.jcadmin.JCAdminRunner@4a83a74a]" started-at="2022-10-03T22:15:00 WIB" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-10-03T22:15:28 WIB" duration-ms="27789" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Menambah daftar testimonial active"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Tambah Testimonial"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumber.framework.runner.jcadmin.JCAdminRunner@4a83a74a]" started-at="2022-10-03T22:15:28 WIB" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-10-03T22:15:56 WIB" duration-ms="27935" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Menambah daftar testimonial noactive"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Tambah Testimonial"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumber.framework.runner.jcadmin.JCAdminRunner@4a83a74a]" started-at="2022-10-03T22:15:56 WIB" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-10-03T22:16:24 WIB" duration-ms="27732" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Menambah daftar testimonial noactive"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Tambah Testimonial"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumber.framework.runner.jcadmin.JCAdminRunner@4a83a74a]" started-at="2022-10-03T22:16:24 WIB" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-10-03T22:16:51 WIB" duration-ms="27402" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Menambah daftar testimonial noactive"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Tambah Testimonial"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumber.framework.runner.jcadmin.JCAdminRunner@4a83a74a]" started-at="2022-10-03T22:16:51 WIB" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-10-03T22:17:20 WIB" duration-ms="28434" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Menambah daftar testimonial noactive"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Tambah Testimonial"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumber.framework.runner.jcadmin.JCAdminRunner@4a83a74a]" started-at="2022-10-03T22:17:20 WIB" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-10-03T22:17:48 WIB" duration-ms="27798" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Menambah daftar testimonial noactive"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Tambah Testimonial"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumber.framework.runner.jcadmin.JCAdminRunner@4a83a74a]" started-at="2022-10-03T22:17:48 WIB" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-10-03T22:18:15 WIB" duration-ms="27282" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Menambah daftar testimonial noactive"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Tambah Testimonial"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:cucumber.framework.runner.jcadmin.JCAdminRunner@4a83a74a]" started-at="2022-10-03T22:18:15 WIB" name="tearDownClass" finished-at="2022-10-03T22:18:18 WIB" duration-ms="2850" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->

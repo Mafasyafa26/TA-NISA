@@ -1,12 +1,46 @@
 Feature: Tambah Testimonial   
+	Background: Background login search
+		Given Admin login dan membuka halaman testimonials tambah
+		When 	Admin klik tombol tambah testimonial tambah
+
   Scenario Outline: Menambah daftar testimonial active
-    Given Admin login dan membuka halaman testimonial
-    When Admin klik tombol tambah
-    And  Admin mengisi form dengan publish <status>
-    And Admin menekan tombol simpan
-    Then Admin menambah testimonial active valid
+    When  <kode test case> Admin mengisi form dengan rating <angka rating> active
+    And <kode test case> Admin menekan tombol simpan testimonial active
+    Then <kode test case> Admin menambah testimonial active valid
     
    Examples:
-   	|status|
-   	|No Active|
-   	|Active|
+   	| angka rating | kode test case |
+   	| 0 | TE003P |
+   	| 1 | TE004P |
+   	| 2 | TE005P |
+   	| 3 | TE006P |
+   	| 4 | TE007P |
+   	| 5 | TE008P |
+   	
+   	Scenario Outline: Menambah daftar testimonial noactive
+    When  <kode test case> Admin mengisi form dengan rating <angka rating> noactive
+    And <kode test case> Admin menekan tombol simpan testimonial no active
+    Then <kode test case> Admin menambah testimonial noactive valid
+    
+   Examples:
+   	| angka rating | kode test case |
+   	| 0 | TE009P |
+   	| 1 | TE010P |
+   	| 2 | TE011P |
+   	| 3 | TE012P |
+   	| 4 | TE013P |
+   	| 5 | TE014P |
+   	
+   	Scenario Outline: Menambah daftar testimonial active format gambar
+    When  <kode test case> Admin mengisi format gambar dengan rating <angka rating> active
+    And <kode test case> Admin menekan tombol simpan testimonial format gambar active
+    Then <kode test case> Admin menambah testimonial format gambar active valid
+    
+   Examples:
+   	| angka rating | kode test case |
+   	| 0 | TE015P |
+   	| 1 | TE016P |
+   	| 2 | TE017P |
+   	| 3 | TE018P |
+   	| 4 | TE019P |
+   	| 5 | TE020P |
