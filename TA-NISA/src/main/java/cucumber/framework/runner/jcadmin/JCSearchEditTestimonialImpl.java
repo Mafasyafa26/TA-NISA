@@ -147,80 +147,46 @@ public class JCSearchEditTestimonialImpl {
 		extentTest.log(LogStatus.PASS, "TE055P Admin berhasil edit isi search edit isi");
 	}
 	
-//	search edit active
-	@When("TE056P Admin mengetikkan nama peserta search edit publish active")
-	public void TE056P_admin_mengetikkan_nama_peserta_search_edit_publish_active() {
+//	search edit publish
+	@When("^(.*)Admin mengetikkan nama peserta search edit publish$")
+	public void kode_test_case_admin_mengetikkan_nama_peserta_search_edit_publish(String strCode) {
 		JCAdminTes.searchEditNamaPesertaDua();
-		extentTest.log(LogStatus.PASS, "TE056P Admin mengetikkan nama peserta search edit publish active");
+		extentTest.log(LogStatus.PASS, "Admin mengetikkan nama peserta search edit publish");
 	}
 
-	@And("TE056P Admin menekan enter pada keyboard search edit publish active")
-	public void TE056P_admin_menekan_enter_pada_keyboard_search_edit_publish_active() {
+	@And("^(.*) Admin menekan enter pada keyboard search edit publish$")
+	public void kode_test_case_admin_menekan_enter_pada_keyboard_search_edit_publish(String strCode) {
 		JCAdminTes.tekanEnter();
-		extentTest.log(LogStatus.PASS, "TE056P Admin menekan enter pada keyboard search edit publish active");
+		extentTest.log(LogStatus.PASS, "Admin menekan enter pada keyboard search edit publish" +strCode);
 	}
 
-	@And("TE056P Data ditemukan dan admin klik data search edit publish active")
-	public void TE056P_data_ditemukan_dan_admin_klik_data_search_edit_publish_active() {
+	@And("^(.*) Data ditemukan dan admin klik data search edit publish$")
+	public void kode_test_case_data_ditemukan_dan_admin_klik_data_search_edit_publish(String strCode) {
 		JCAdminTes.editClickDataSearch();
-	    extentTest.log(LogStatus.PASS, "TE056P Data ditemukan dan admin klik data search edit publish active");
+	    extentTest.log(LogStatus.PASS, "Data ditemukan dan admin klik data search edit publish");
 	}
 
-	@And("TE056P Admin mengedit ulang publish active search edit menjadi no active")
-	public void TE056P_admin_mengedit_ulang_publish_active_search_edit_menjadi_no_active() {
-		JCAdminTes.editActNoActSearch();
-	    Utils.delay(2, strDelay);
-	    extentTest.log(LogStatus.PASS, "TE056P Admin mengedit ulang publish active search edit menjadi no active");
+	@And("^(.*) Admin edit ulang publish (.*) search edit$")
+	public void kode_test_case_admin_edit_ulang_publish_publish_search_edit(String strCode,String strPublish) {
+		System.out.println("ini dari edit publish dengan recent "+strPublish);
+	    if(strPublish.equalsIgnoreCase("Active")){
+	    	System.out.println("ACT KE NO ACT");
+	    	JCAdminTes.editActNoActSearch();
+	    } else {
+	    	System.out.println("NO ACT KE ACT");
+	    	JCAdminTes.editNoActActSearch();
+	    }
 	}
 
-	@And("TE056P Admin menekan tombol simpan search edit publish active")
-	public void TE056P_admin_menekan_tombol_simpan_search_edit_publish_active() {
+	@And("^(.*) Admin menekan tombol simpan search edit publish$")
+	public void kode_test_case_admin_menekan_tombol_simpan_search_edit_publish(String strCode) {
 		Utils.fullScroll();
 		JCAdminTes.clickSimpan();
-		extentTest.log(LogStatus.PASS, "TE056P Admin menekan tombol simpan search edit publish active");
+		extentTest.log(LogStatus.PASS, "Admin menekan tombol simpan search edit publish");
 	}
 
-	@Then("TE056P Admin berhasil edit publish active search edit menjadi no active")
-	public void TE056P_admin_berhasil_edit_publish_active_search_edit_menjadi_no_active() {
-		extentTest.log(LogStatus.PASS, "TE056P Admin berhasil edit publish active search edit menjadi no active");
-	}
-
-//	search edit no active
-	@When("TE057P Admin mengetikkan nama peserta search edit publish no active")
-	public void TE057P_admin_mengetikkan_nama_peserta_search_edit_publish_no_active() {
-		JCAdminTes.searchEditNamaPesertaDua();
-		extentTest.log(LogStatus.PASS, "TE057P Admin mengetikkan nama peserta search edit publish no active");
-	}
-
-	@And("TE057P Admin menekan enter pada keyboard search edit publish no active")
-	public void TE057P_admin_menekan_enter_pada_keyboard_search_edit_publish_no_active() {
-		JCAdminTes.tekanEnter();
-		extentTest.log(LogStatus.PASS, "TE057P Admin menekan enter pada keyboard search edit publish no active");
-	}
-
-	@And("TE057P Data ditemukan dan admin klik data search edit publish no active")
-	public void TE057P_data_ditemukan_dan_admin_klik_data_search_edit_publish_no_active() {
-		JCAdminTes.editClickDataSearch();
-	    extentTest.log(LogStatus.PASS, "TE057P Data ditemukan dan admin klik data search edit publish no active");
-	}
-
-	@And("TE057P Admin mengedit ulang publish no active search edit menjadi active")
-	public void TE057P_admin_mengedit_ulang_publish_no_active_search_edit_menjadi_active() {
-		JCAdminTes.editNoActActSearch();
-	    Utils.delay(2, strDelay);
-	    extentTest.log(LogStatus.PASS, "TE057P Admin mengedit ulang publish no active search edit menjadi active");
-	}
-
-	@And("TE057P Admin menekan tombol simpan search edit publish no active")
-	public void TE057P_admin_menekan_tombol_simpan_search_edit_publish_no_active() {
-		Utils.fullScroll();
-		JCAdminTes.clickSimpan();
-		extentTest.log(LogStatus.PASS, "TE057P Admin menekan tombol simpan search edit publish no active");
-	}
-
-	@Then("TE057P Admin berhasil edit publish no active search edit menjadi active")
-	public void TE057P_admin_berhasil_edit_publish_no_active_search_edit_menjadi_active() {
-		extentTest.log(LogStatus.PASS, "TE057P Admin berhasil edit publish no active search edit menjadi active");
-	}
-	
+	@Then("^(.*) Admin berhasil edit publish search edit$")
+	public void kode_test_case_admin_berhasil_edit_publish_search_edit(String strCode) {
+		extentTest.log(LogStatus.PASS, "Admin berhasil edit publish active search edit");
+	}	
 }
