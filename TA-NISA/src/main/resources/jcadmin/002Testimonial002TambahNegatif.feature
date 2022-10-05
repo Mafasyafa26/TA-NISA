@@ -3,19 +3,19 @@ Feature: Tambah Testimonial Negative
 		Given Admin login dan open page testimonial tambah negative
 		When 	Admin klik tombol tambah testimonial tambah negative
 
-#		Scenario Outline: Menambah daftar negative testimonial active
-    #When  <kode test case> Admin mengisi form negative dengan rating <angka rating> active
-    #And <kode test case> Admin menekan tombol simpan testimonial active negative
-    #Then <kode test case> Admin menambah testimonial active invalid negative
-    #
-   #Examples:
-   #	| angka rating | kode test case |
-   #	| 0 | TE001N |
-   #	| 1 | TE002N |
-   #	| 2 | TE003N |
-   #	| 3 | TE004N |
-   #	| 4 | TE005N |
-   #	| 5 | TE006N |
+		Scenario Outline: Menambah daftar negative testimonial active
+    When  <kode test case> Admin mengisi form negative dengan rating <angka rating> active
+    And <kode test case> Admin menekan tombol simpan testimonial active negative
+    Then <kode test case> Admin menambah testimonial active invalid negative
+    
+   Examples:
+   	| angka rating | kode test case |
+   	| 0 | TE001N |
+   	| 1 | TE002N |
+   	| 2 | TE003N |
+   	| 3 | TE004N |
+   	| 4 | TE005N |
+   	| 5 | TE006N |
    	
    	Scenario Outline: Menambah daftar negative testimonial no active
     When  <kode test case> Admin mengisi form tambah negative dengan rating <angka rating> publish no active
