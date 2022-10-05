@@ -1,5 +1,6 @@
 package cucumber.framework.runner.jcadmin;
 
+
 import org.openqa.selenium.WebDriver;
 
 import com.relevantcodes.extentreports.ExtentTest;
@@ -168,14 +169,12 @@ public class JCSearchEditTestimonialImpl {
 
 	@And("^(.*) Admin edit ulang publish (.*) search edit$")
 	public void kode_test_case_admin_edit_ulang_publish_publish_search_edit(String strCode,String strPublish) {
-		System.out.println("ini dari edit publish dengan recent "+strPublish);
 	    if(strPublish.equalsIgnoreCase("Active")){
-	    	System.out.println("ACT KE NO ACT");
 	    	JCAdminTes.editActNoActSearch();
 	    } else {
-	    	System.out.println("NO ACT KE ACT");
 	    	JCAdminTes.editNoActActSearch();
 	    }
+	    extentTest.log(LogStatus.PASS, "Admin edit ulang publish " +strPublish);
 	}
 
 	@And("^(.*) Admin menekan tombol simpan search edit publish$")

@@ -149,7 +149,27 @@ public enum JCAdminTesting {
 	MOO146("Menambah daftar testimonial no active rating "), 
 	MOO147("Menambah daftar testimonial no active rating "), 
 	MOO148("Menambah daftar testimonial no active rating "), 
-	MOO149("Menambah daftar testimonial no active rating ");
+	MOO149("Menambah daftar testimonial no active rating "),
+	MOO150("Menambah daftar testimonial no active rating "), 
+	MOO151("Menambah daftar testimonial no active rating "), 
+	MOO152("Menambah daftar testimonial no active rating "), 
+	MOO153("Menambah daftar testimonial no active rating "), 
+	MOO154("Menambah daftar testimonial no active rating "), 
+	MOO155("Menambah daftar testimonial no active rating "), 
+	MOO156("Menambah daftar testimonial no active rating "), 
+	MOO157("Menambah daftar testimonial no active rating "), 
+	MOO158("Menambah daftar testimonial no active rating "), 
+	MOO159("Menambah daftar testimonial no active rating "), 
+	MOO160("Menambah daftar testimonial no active rating "), 
+	MOO161("Menambah daftar testimonial no active rating "), 
+	MOO162("Menambah daftar testimonial no active rating "), 
+	MOO163("Menambah daftar testimonial no active rating "), 
+	MOO164("Menambah daftar testimonial no active rating "), 
+	MOO165("Menambah daftar testimonial no active rating "), 
+	MOO166("Menambah daftar testimonial no active rating "), 
+	MOO167("Menambah daftar testimonial no active rating "), 
+	MOO168("Menambah daftar testimonial no active rating "), 
+	MOO169("Menambah daftar testimonial no active rating ");
 	
 	private String testName;
 	

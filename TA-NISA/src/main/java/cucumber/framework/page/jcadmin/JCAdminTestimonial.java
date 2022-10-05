@@ -68,6 +68,9 @@ public class JCAdminTestimonial extends JCAdminLoginPage {
 //	Karakter (<|>|'|") tidak diizinkan
 	@FindBy(xpath = "//div[@id='pageWrapper']//div[4]//div[1]//div[1]")
 	private WebElement txtIsi;
+//	Karakter (<|>|'|") tidak diizinkan
+	@FindBy(xpath = "//div[@class='invalid-feedback']")
+	private WebElement txtNamaKosong;
 //	Nama Wajib diisi
 	@FindBy(xpath = "//div[@class='card-body']//div[2]//div[1]//div[1]")
 	private WebElement txtNama;
@@ -89,7 +92,10 @@ public class JCAdminTestimonial extends JCAdminLoginPage {
 	@FindBy(xpath ="/html[1]/body[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[1]/div[1]/div[3]/div[1]/b[1]")
 	private WebElement txtTotal;
 	
+//	=====================
 //	MENAMBAH DATA
+//	=====================
+	
 	public void tambahDataTestimonialPublishActive(String rate){
 		Utils.delay(3, strDelay);
 		File myFile = new File(lokasiFileGambarTambahAct);
@@ -219,8 +225,10 @@ public class JCAdminTestimonial extends JCAdminLoginPage {
 	this.upload.sendKeys(lokasiFile);
 	}
 	
+//	=====================
 //	MENAMBAH DATA NEGATIF
-
+//	=====================
+	
 	public void tambahDataTestimonialNegativeActive(String rate){
 		Utils.delay(3, strDelay);
 		File myFile = new File(lokasiFileGambarTambahNegAct);
@@ -285,7 +293,81 @@ public class JCAdminTestimonial extends JCAdminLoginPage {
 		Utils.delay(3, strDelay);
 	}
 	
-	// MENGEDIT DATA
+	public void tambahDataTestimonialNegativeActiveChar(String rate){
+		Utils.delay(3, strDelay);
+		File myFile = new File(lokasiFileGambarTambahNegAct);
+		uploadFile(myFile);
+		Utils.delay(3, strDelay);
+		this.nama.sendKeys("hgadadbnsadmnvmnmaaaaaaajjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjhhhhhhhhhhhhhhhhhhasssssssssssssssssssnnnnnnnnnnnnnnnnnnnnnassashsajjhbdhjjjjjjjjjnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnhgadadbnsadmnvmnmaaaaaaajjjjjjjjjjjjjjjjjjjjjjjjjjjkLHgadadbnsadmnvmnmaaaaaaajjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjhhhhhhhhhhhhhhhhhhasssssssssssssssssssnnnnnnnnnnnnnnnnnnnnnassashsajjhbdhjjjjjjjjjnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnhgadadbnsadmnvmnmaaaaaaajjjjjjjjjjjjjjjjjjjjjjjjjjjkl");
+		Utils.delay(3, strDelay);
+		Select selPublish = new Select(this.selPublish);
+		selPublish.selectByVisibleText("Active");
+		Utils.delay(3, strDelay);
+		this.isiTesti.sendKeys("Terkadang ditengah jalan kita kehilangan motivasi, saat seperti itu coba lihat kebelakang. Kita bisa sadar betapa jauhnya kita sudah melangkah, seberapa besar energi dan waktu yang sudah kita korbankan");
+		Utils.delay(3, strDelay);
+		selRating.click();
+		Integer intRate = Integer.parseInt(rate);
+		pilihRating(intRate);
+		Utils.delay(3, strDelay);
+	}
+	
+	public void tambahDataTestimonialNegativeNoActiveChar(String rate){
+		Utils.delay(3, strDelay);
+		File myFile = new File(lokasiFileGambarTambahNegNoAct);
+		uploadFile(myFile);
+		Utils.delay(3, strDelay);
+		this.nama.sendKeys("mkaihdbnsadmnvmnmaaaaaaajjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjhhhhhhhhhhhhhhhhhhasssssssssssssssssssnnnnnnnnnnnnnnnnnnnnnassashsajjhbdhjjjjjjjjjnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnhgadadbnsadmnvmnmaaaaaaajjjjjjjjjjjjjjjjjjjjjjjjjjjjABjadadbnsadmnvmnmaaaaaaajjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjhhhhhhhhhhhhhhhhhhasssssssssssssssssssnnnnnnnnnnnnnnnnnnnnnassashsajjhbdhjjjjjjjjjnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnhgadadbnsadmnvmnmaaaaaaajjjjjjjjjjjjjjjjjjjjjjjjjjjkl");
+		Utils.delay(3, strDelay);
+		Select selPublish = new Select(this.selPublish);
+		selPublish.selectByVisibleText("No Active");
+		Utils.delay(3, strDelay);
+		this.isiTesti.sendKeys("Menanyakan apakah komputer dapat berpikir sama seperti menanyakan apakah kapal selam dapat berenang.");
+		Utils.delay(3, strDelay);
+		selRating.click();
+		Integer intRate = Integer.parseInt(rate);
+		pilihRating(intRate);
+		Utils.delay(3, strDelay);
+	}
+	
+	public void tambahDataTestimonialNegActiveNama(String rate){
+		Utils.delay(3, strDelay);
+		File myFile = new File(lokasiFileGambarTambahNegAct);
+		uploadFile(myFile);
+		Utils.delay(3, strDelay);
+		this.nama.sendKeys("<Tulus> /n");
+		Utils.delay(3, strDelay);
+		Select selPublish = new Select(this.selPublish);
+		selPublish.selectByVisibleText("Active");
+		Utils.delay(3, strDelay);
+		this.isiTesti.sendKeys("Hallo");
+		Utils.delay(3, strDelay);
+		selRating.click();
+		Integer intRate = Integer.parseInt(rate);
+		pilihRating(intRate);
+		Utils.delay(3, strDelay);
+	}
+	
+	public void tambahDataTestimonialNegNoActiveNama(String rate){
+		Utils.delay(3, strDelay);
+		File myFile = new File(lokasiFileGambarTambahNegNoAct);
+		uploadFile(myFile);
+		Utils.delay(3, strDelay);
+		this.nama.sendKeys("/n ini kurang dari <");
+		Utils.delay(3, strDelay);
+		Select selPublish = new Select(this.selPublish);
+		selPublish.selectByVisibleText("No Active");
+		Utils.delay(3, strDelay);
+		this.isiTesti.sendKeys("Selamat datang");
+		Utils.delay(3, strDelay);
+		selRating.click();
+		Integer intRate = Integer.parseInt(rate);
+		pilihRating(intRate);
+		Utils.delay(3, strDelay);
+	}
+	
+//	=====================
+//	MENGEDIT DATA
+//	=====================
 
 	public void editClickDataPertama() {
 		this.editPertama.click();
@@ -386,14 +468,18 @@ public class JCAdminTestimonial extends JCAdminLoginPage {
 			}
 		}
 		
+//		=====================
 //		MENCARI DATA
+//		=====================
 		
 		public void searchNamaPeserta() {
 			this.fieldSearch.sendKeys("Angga");
 			Utils.delay(2, strDelay);
 		}
 		
+//		=====================
 //		MENCARI DAN EDIT DATA
+//		=====================
 
 		public void searchEditNamaPeserta() {
 			this.fieldSearch.sendKeys("Ahmad Saifur");
@@ -529,6 +615,11 @@ public class JCAdminTestimonial extends JCAdminLoginPage {
 		public String getTxtIsiKosong() {
 			return new WebDriverWait(driver, Duration.ofSeconds(15))
 					.until(ExpectedConditions.visibilityOf(txtIsiKosong)).getText();
+			}
+		
+		public String getTxtNamaKosong() {
+			return new WebDriverWait(driver, Duration.ofSeconds(15))
+					.until(ExpectedConditions.visibilityOf(txtNamaKosong)).getText();
 			}
 		
 //		hapus kolom edit (steril)
