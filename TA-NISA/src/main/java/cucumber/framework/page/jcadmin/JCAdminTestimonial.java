@@ -334,7 +334,7 @@ public class JCAdminTestimonial extends JCAdminLoginPage {
 		File myFile = new File(lokasiFileGambarTambahNegAct);
 		uploadFile(myFile);
 		Utils.delay(3, strDelay);
-		this.nama.sendKeys("<Tulus> /n");
+		this.nama.sendKeys("<Tulus |n");
 		Utils.delay(3, strDelay);
 		Select selPublish = new Select(this.selPublish);
 		selPublish.selectByVisibleText("Active");
