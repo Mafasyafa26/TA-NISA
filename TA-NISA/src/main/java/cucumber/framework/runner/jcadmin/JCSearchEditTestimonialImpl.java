@@ -147,4 +147,80 @@ public class JCSearchEditTestimonialImpl {
 		extentTest.log(LogStatus.PASS, "TE053P Admin berhasil edit isi search edit isi");
 	}
 	
+//	search edit active
+	@When("TE054P Admin mengetikkan nama peserta search edit publish active")
+	public void te054p_admin_mengetikkan_nama_peserta_search_edit_publish_active() {
+		JCAdminTes.searchEditNamaPesertaDua();
+		extentTest.log(LogStatus.PASS, "TE054P Admin mengetikkan nama peserta search edit publish active");
+	}
+
+	@And("TE054P Admin menekan enter pada keyboard search edit publish active")
+	public void te054p_admin_menekan_enter_pada_keyboard_search_edit_publish_active() {
+		JCAdminTes.tekanEnter();
+		extentTest.log(LogStatus.PASS, "TE054P Admin menekan enter pada keyboard search edit publish active");
+	}
+
+	@And("TE054P Data ditemukan dan admin klik data search edit publish active")
+	public void te054p_data_ditemukan_dan_admin_klik_data_search_edit_publish_active() {
+		JCAdminTes.editClickDataSearch();
+	    extentTest.log(LogStatus.PASS, "TE054P Data ditemukan dan admin klik data search edit publish active");
+	}
+
+	@And("TE054P Admin mengedit ulang publish active search edit menjadi no active")
+	public void te054p_admin_mengedit_ulang_publish_active_search_edit_menjadi_no_active() {
+		JCAdminTes.editActNoActSearch();
+	    Utils.delay(2, strDelay);
+	    extentTest.log(LogStatus.PASS, "TE054P Admin mengedit ulang publish active search edit menjadi no active");
+	}
+
+	@And("TE054P Admin menekan tombol simpan search edit publish active")
+	public void te054p_admin_menekan_tombol_simpan_search_edit_publish_active() {
+		Utils.fullScroll();
+		JCAdminTes.clickSimpan();
+		extentTest.log(LogStatus.PASS, "TE054P Admin menekan tombol simpan search edit publish active");
+	}
+
+	@Then("TE054P Admin berhasil edit publish active search edit menjadi no active")
+	public void te054p_admin_berhasil_edit_publish_active_search_edit_menjadi_no_active() {
+		extentTest.log(LogStatus.PASS, "TE054P Admin berhasil edit publish active search edit menjadi no active");
+	}
+
+//	search edit no active
+	@When("TE055P Admin mengetikkan nama peserta search edit publish no active")
+	public void te055p_admin_mengetikkan_nama_peserta_search_edit_publish_no_active() {
+		JCAdminTes.searchEditNamaPesertaDua();
+		extentTest.log(LogStatus.PASS, "TE055P Admin mengetikkan nama peserta search edit publish no active");
+	}
+
+	@And("TE055P Admin menekan enter pada keyboard search edit publish no active")
+	public void te055p_admin_menekan_enter_pada_keyboard_search_edit_publish_no_active() {
+		JCAdminTes.tekanEnter();
+		extentTest.log(LogStatus.PASS, "TE055P Admin menekan enter pada keyboard search edit publish no active");
+	}
+
+	@And("TE055P Data ditemukan dan admin klik data search edit publish no active")
+	public void te055p_data_ditemukan_dan_admin_klik_data_search_edit_publish_no_active() {
+		JCAdminTes.editClickDataSearch();
+	    extentTest.log(LogStatus.PASS, "TE055P Data ditemukan dan admin klik data search edit publish no active");
+	}
+
+	@And("TE055P Admin mengedit ulang publish no active search edit menjadi active")
+	public void te055p_admin_mengedit_ulang_publish_no_active_search_edit_menjadi_active() {
+		JCAdminTes.editNoActActSearch();
+	    Utils.delay(2, strDelay);
+	    extentTest.log(LogStatus.PASS, "TE055P Admin mengedit ulang publish no active search edit menjadi active");
+	}
+
+	@And("TE055P Admin menekan tombol simpan search edit publish no active")
+	public void te055p_admin_menekan_tombol_simpan_search_edit_publish_no_active() {
+		Utils.fullScroll();
+		JCAdminTes.clickSimpan();
+		extentTest.log(LogStatus.PASS, "TE055P Admin menekan tombol simpan search edit publish no active");
+	}
+
+	@Then("TE055P Admin berhasil edit publish no active search edit menjadi active")
+	public void te055p_admin_berhasil_edit_publish_no_active_search_edit_menjadi_active() {
+		extentTest.log(LogStatus.PASS, "TE055P Admin berhasil edit publish no active search edit menjadi active");
+	}
+	
 }

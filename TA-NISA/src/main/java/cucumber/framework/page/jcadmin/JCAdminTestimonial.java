@@ -326,6 +326,11 @@ public class JCAdminTestimonial extends JCAdminLoginPage {
 			Utils.delay(2, strDelay);
 		}
 		
+		public void searchEditNamaPesertaDua() {
+			this.fieldSearch.sendKeys("Raisa");
+			Utils.delay(2, strDelay);
+		}
+		
 		public void editClickDataSearch() {
 			this.editPertama.click();
 		}
@@ -377,6 +382,18 @@ public class JCAdminTestimonial extends JCAdminLoginPage {
 			isiTesti.clear();
 			this.isiTesti.sendKeys("JuaraCoding menambah pengetahuan tentang kepemahaman di dunia pemrogramman");
 			Utils.delay(2, strDelay);
+		}
+		
+		public void editActNoActSearch() {
+			Utils.delay(3, strDelay);
+			Select selPublish = new Select(this.selPublish);
+			selPublish.selectByVisibleText("No Active");
+		}
+		
+		public void editNoActActSearch() {
+			Utils.delay(3, strDelay);
+			Select selPublish = new Select(this.selPublish);
+			selPublish.selectByVisibleText("Active");
 		}
 		
 		public void clickField() {
