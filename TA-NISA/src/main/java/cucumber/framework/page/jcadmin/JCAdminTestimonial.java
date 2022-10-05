@@ -29,6 +29,8 @@ public class JCAdminTestimonial extends JCAdminLoginPage {
 //	deklarasi file gambar
 	private String lokasiFileGambarTambahNoAct = "src\\main\\resources\\gambarnisa\\raisa.jpg";
 	private String lokasiFileGambarTambahAct = "src\\main\\resources\\gambarnisa\\nadin.jpg";
+	private String lokasiFileGambarTambahNegNoAct = "src\\main\\resources\\gambarnisa\\dev.png";
+	private String lokasiFileGambarTambahNegAct = "src\\main\\resources\\gambarnisa\\jerome.jpeg";
 	private String lokasiFileGambarTambahForAct = "src\\main\\resources\\gambarnisa\\kartun.gif";
 	private String lokasiFileGambarTambahForNoAct = "src\\main\\resources\\gambarnisa\\dog.webp";
 	private String lokasiFileGambarTambahKarAct = "src\\main\\resources\\gambarnisa\\duta.jpg";
@@ -66,6 +68,12 @@ public class JCAdminTestimonial extends JCAdminLoginPage {
 //	Karakter (<|>|'|") tidak diizinkan
 	@FindBy(xpath = "//div[@id='pageWrapper']//div[4]//div[1]//div[1]")
 	private WebElement txtIsi;
+//	Nama Wajib diisi
+	@FindBy(xpath = "//div[@class='card-body']//div[2]//div[1]//div[1]")
+	private WebElement txtNama;
+//	Harap isi content testimonial
+	@FindBy(xpath = "//div[@class='invalid-feedback']")
+	private WebElement txtIsiKosong;
 	
 //	data yang akan diedit 
 	@FindBy(xpath ="//figure[1]//a[1]//img[1]")
@@ -209,6 +217,72 @@ public class JCAdminTestimonial extends JCAdminLoginPage {
 	Utils.delay(1, strDelay);
 	String lokasiFile = fileInput.getAbsolutePath();
 	this.upload.sendKeys(lokasiFile);
+	}
+	
+//	MENAMBAH DATA NEGATIF
+
+	public void tambahDataTestimonialNegativeActive(String rate){
+		Utils.delay(3, strDelay);
+		File myFile = new File(lokasiFileGambarTambahNegAct);
+		uploadFile(myFile);
+		Utils.delay(3, strDelay);
+		Select selPublish = new Select(this.selPublish);
+		selPublish.selectByVisibleText("Active");
+		Utils.delay(3, strDelay);
+		this.isiTesti.sendKeys("Terkadang ditengah jalan kita kehilangan motivasi, saat seperti itu coba lihat kebelakang. Kita bisa sadar betapa jauhnya kita sudah melangkah, seberapa besar energi dan waktu yang sudah kita korbankan");
+		Utils.delay(3, strDelay);
+		selRating.click();
+		Integer intRate = Integer.parseInt(rate);
+		pilihRating(intRate);
+		Utils.delay(3, strDelay);
+	}
+	
+	public void tambahDataTestimonialNegativeNoActive(String rate){
+		Utils.delay(3, strDelay);
+		File myFile = new File(lokasiFileGambarTambahNegNoAct);
+		uploadFile(myFile);
+		Utils.delay(3, strDelay);
+		Select selPublish = new Select(this.selPublish);
+		selPublish.selectByVisibleText("No Active");
+		Utils.delay(3, strDelay);
+		this.isiTesti.sendKeys("Menanyakan apakah komputer dapat berpikir sama seperti menanyakan apakah kapal selam dapat berenang.");
+		Utils.delay(3, strDelay);
+		selRating.click();
+		Integer intRate = Integer.parseInt(rate);
+		pilihRating(intRate);
+		Utils.delay(3, strDelay);
+	}
+	
+	public void tambahDataTestimonialNegativeActiveIsi(String rate){
+		Utils.delay(3, strDelay);
+		File myFile = new File(lokasiFileGambarTambahNegAct);
+		uploadFile(myFile);
+		Utils.delay(3, strDelay);
+		this.nama.sendKeys("Jerome");
+		Utils.delay(3, strDelay);
+		Select selPublish = new Select(this.selPublish);
+		selPublish.selectByVisibleText("Active");
+		Utils.delay(3, strDelay);
+		selRating.click();
+		Integer intRate = Integer.parseInt(rate);
+		pilihRating(intRate);
+		Utils.delay(3, strDelay);
+	}
+	
+	public void tambahDataTestimonialNegativeNoActiveIsi(String rate){
+		Utils.delay(3, strDelay);
+		File myFile = new File(lokasiFileGambarTambahNegNoAct);
+		uploadFile(myFile);
+		Utils.delay(3, strDelay);
+		this.nama.sendKeys("Developper");
+		Utils.delay(3, strDelay);
+		Select selPublish = new Select(this.selPublish);
+		selPublish.selectByVisibleText("No Active");
+		Utils.delay(3, strDelay);
+		selRating.click();
+		Integer intRate = Integer.parseInt(rate);
+		pilihRating(intRate);
+		Utils.delay(3, strDelay);
 	}
 	
 	// MENGEDIT DATA
@@ -447,6 +521,15 @@ public class JCAdminTestimonial extends JCAdminLoginPage {
 					.until(ExpectedConditions.visibilityOf(txtTotal)).getText();
 			}
 		
+		public String getTxtNama() {
+			return new WebDriverWait(driver, Duration.ofSeconds(15))
+					.until(ExpectedConditions.visibilityOf(txtNama)).getText();
+			}
+		
+		public String getTxtIsiKosong() {
+			return new WebDriverWait(driver, Duration.ofSeconds(15))
+					.until(ExpectedConditions.visibilityOf(txtIsiKosong)).getText();
+			}
 		
 //		hapus kolom edit (steril)
 		public void clearField() {

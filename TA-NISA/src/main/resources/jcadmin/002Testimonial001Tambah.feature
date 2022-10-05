@@ -1,5 +1,5 @@
 Feature: Tambah Testimonial   
-	Background: Background login search
+	Background: Background login tambah
 		Given Admin login dan membuka halaman testimonials tambah
 		When 	Admin klik tombol tambah testimonial tambah
 
