@@ -40,7 +40,6 @@ public class JCEditTestimonialImpl {
 	}
 	//INI AKHIR BACKGROUND
 	
-	
 //	edit gambar peserta
 	@When("TE039P Admin mengedit gambar peserta")
 	public void admin_mengedit_gambar_peserta() {
