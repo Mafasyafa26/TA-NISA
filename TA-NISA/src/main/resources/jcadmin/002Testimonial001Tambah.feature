@@ -10,12 +10,12 @@ Feature: Tambah Testimonial
     
    Examples:
    	| angka rating | kode test case |
-   	| 0 | TE003P |
-   	| 1 | TE004P |
-   	| 2 | TE005P |
-   	| 3 | TE006P |
-   	| 4 | TE007P |
-   	| 5 | TE008P |
+   	| 0 | TE005P |
+   	| 1 | TE006P |
+   	| 2 | TE007P |
+   	| 3 | TE008P |
+   	| 4 | TE009P |
+   	| 5 | TE010P |
    	
    	Scenario Outline: Menambah daftar testimonial noactive
     When  <kode test case> Admin mengisi form dengan rating <angka rating> noactive
@@ -24,12 +24,12 @@ Feature: Tambah Testimonial
     
    Examples:
    	| angka rating | kode test case |
-   	| 0 | TE009P |
-   	| 1 | TE010P |
-   	| 2 | TE011P |
-   	| 3 | TE012P |
-   	| 4 | TE013P |
-   	| 5 | TE014P |
+   	| 0 | TE011P |
+   	| 1 | TE012P |
+   	| 2 | TE013P |
+   	| 3 | TE014P |
+   	| 4 | TE015P |
+   	| 5 | TE016P |
    	
    	Scenario Outline: Menambah daftar testimonial active format gambar
     When  <kode test case> Admin mengisi format gambar dengan rating <angka rating> active
@@ -38,12 +38,12 @@ Feature: Tambah Testimonial
     
    Examples:
    	| angka rating | kode test case |
-   	| 0 | TE015P |
-   	| 1 | TE016P |
-   	| 2 | TE017P |
-   	| 3 | TE018P |
-   	| 4 | TE019P |
-   	| 5 | TE020P |
+   	| 0 | TE017P |
+   	| 1 | TE018P |
+   	| 2 | TE019P |
+   	| 3 | TE020P |
+   	| 4 | TE021P |
+   	| 5 | TE022P |
    	
    	Scenario Outline: Menambah testimonial no active format gambar
     When  <kode test case> Admin tambah format gambar dengan rating <angka rating> no active
@@ -52,12 +52,12 @@ Feature: Tambah Testimonial
     
    Examples:
    	| angka rating | kode test case |
-   	| 0 | TE021P |
-   	| 1 | TE022P |
-   	| 2 | TE023P |
-   	| 3 | TE024P |
-   	| 4 | TE025P |
-   	| 5 | TE026P |
+   	| 0 | TE023P |
+   	| 1 | TE024P |
+   	| 2 | TE025P |
+   	| 3 | TE026P |
+   	| 4 | TE027P |
+   	| 5 | TE028P |
    	
    	Scenario Outline: Menambah testi active karakter beda
     When  <kode test case> Admin tambah isi karakter beda dengan rating <angka rating> active
@@ -66,12 +66,12 @@ Feature: Tambah Testimonial
     
    Examples:
    	| angka rating | kode test case |
-   	| 0 | TE027P |
-   	| 1 | TE028P |
-   	| 2 | TE029P |
-   	| 3 | TE030P |
-   	| 4 | TE031P |
-   	| 5 | TE032P |
+   	| 0 | TE029P |
+   	| 1 | TE030P |
+   	| 2 | TE031P |
+   	| 3 | TE032P |
+   	| 4 | TE033P |
+   	| 5 | TE034P |
    	
    	Scenario Outline: Menambah testi no active format karakter beda
     When  <kode test case> Admin menambah isi format karakter beda dengan rating <angka rating> no active
@@ -80,9 +80,9 @@ Feature: Tambah Testimonial
     
    Examples:
    	| angka rating | kode test case |
-   	| 0 | TE033P |
-   	| 1 | TE034P |
-   	| 2 | TE035P |
-   	| 3 | TE036P |
-   	| 4 | TE037P |
-   	| 5 | TE038P |
+   	| 0 | TE035P |
+   	| 1 | TE036P |
+   	| 2 | TE037P |
+   	| 3 | TE038P |
+   	| 4 | TE039P |
+   	| 5 | TE040P |
