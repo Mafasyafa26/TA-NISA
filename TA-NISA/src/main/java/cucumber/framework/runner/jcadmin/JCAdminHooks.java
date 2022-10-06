@@ -24,7 +24,18 @@ public class JCAdminHooks {
 	public static ExtentTest extentTest;
 	public static ExtentReports reports = new ExtentReports("target/jcadmin/extentreport/jcadmin-scene-login-outline-xr.html");
 	private static JCAdminTesting[] tests = JCAdminTesting.values();
-	private static final int[] DATA_OUTLINE = {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,6,6,6,6,6,6,6,6,6,6,6,6,6,6,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,2};
+	private static final int[] DATA_OUTLINE = {
+			1,1,1,1,1,1,1, //001_001
+			1,1,1,1,1,1,1,1, //001_002
+			6,6,6,6,6,6, //002_001
+			6,6,6,6,6,6,6,6, //002_002
+			1,1,1,1,1,1,1,1,1,1,1,//002_003
+			1,2, //002_004
+			1, //002_005
+			1,1, //002_006
+			1,1,1,2, //002_007
+			1, //002_008
+			1,1,1}; //002_009
 	private String testReport = "";
 	
 	@Before

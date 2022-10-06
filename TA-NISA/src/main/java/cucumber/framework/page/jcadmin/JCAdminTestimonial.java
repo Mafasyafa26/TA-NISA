@@ -52,10 +52,16 @@ public class JCAdminTestimonial extends JCAdminLoginPage {
 	private WebElement btnTambahhTestimonial;
 	@FindBy(xpath = "//h3[normalize-space()='List Testimonial']")
 	private WebElement txtLaman;
+	@FindBy(xpath = "//a[normalize-space()='1']")
+	private WebElement lamanSatu;
 	@FindBy(xpath = "//a[normalize-space()='2']")
 	private WebElement lamanDua;
+	@FindBy(xpath = "//a[normalize-space()='3']")
+	private WebElement lamanTiga;
 	@FindBy(xpath = "//a[@aria-label='Next']")
 	private WebElement lamanNext;
+	@FindBy(xpath = "//a[@aria-label='Previous']")
+	private WebElement lamanPrevious;
 	@FindBy(xpath = "/html[1]/body[1]/div[1]/*[name()='svg'][1]")
 	private WebElement lamanScrollUp;
 	
@@ -127,6 +133,40 @@ public class JCAdminTestimonial extends JCAdminLoginPage {
 	public void searchNamaPesertaList() {
 		this.fieldSearch.sendKeys("Nadin");
 		Utils.delay(2, strDelay);
+	}
+	
+//	=====================
+//	SLIDE PAGE TESTIMONIAL
+//	=====================
+	
+	public void slidePageTestimonialPertama() {
+		Utils.fullScroll();
+		Utils.delay(3, strDelay);
+		lamanDua.click();
+		Utils.delay(3, strDelay);
+		Utils.scrollFullMouse(500);
+		lamanScrollUp.click();
+		Utils.delay(3, strDelay);
+	}
+	
+	public void slidePageTestimonialKedua() {
+		Utils.fullScroll();
+		Utils.delay(3, strDelay);
+		lamanTiga.click();
+		Utils.delay(3, strDelay);
+		Utils.scrollFullMouse(500);
+		lamanScrollUp.click();
+		Utils.delay(3, strDelay);
+	}
+	
+	public void slidePageTestimonialKetiga() {
+		Utils.fullScroll();
+		Utils.delay(3, strDelay);
+		lamanNext.click();
+		Utils.delay(3, strDelay);
+		Utils.scrollFullMouse(500);
+		lamanScrollUp.click();
+		Utils.delay(3, strDelay);
 	}
 	
 //	=====================

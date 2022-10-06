@@ -45,7 +45,11 @@ public enum JCAdminTesting {
 	A042("Mencari dan edit gambar"),
 	A043("Mencari dan edit nama"),
 	A044("Mencari dan edit isi"),
-	A045("Mencari dan edit publish");
+	A045("Mencari dan edit publish"),
+	A046("Melihat data dalam page list testimonials"),
+	A047("Memindahkan halaman pertama"),
+	A048("Memindahkan halaman kedua"),
+	A049("Memindahkan halaman ketiga"),;
 	
 	private String testName;
 	
