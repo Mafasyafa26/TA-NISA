@@ -43,6 +43,7 @@ public class JCAdminTestimonial extends JCAdminLoginPage {
 		PageFactory.initElements(driver, this);
 		super.LoginPage("ucen1315@gmail.com", "a");
 	}
+	
 	@FindBy(linkText = "Home")
 	private WebElement btnHome;
 	@FindBy(linkText = "Testimonial")
@@ -51,6 +52,12 @@ public class JCAdminTestimonial extends JCAdminLoginPage {
 	private WebElement btnTambahhTestimonial;
 	@FindBy(xpath = "//h3[normalize-space()='List Testimonial']")
 	private WebElement txtLaman;
+	@FindBy(xpath = "//a[normalize-space()='2']")
+	private WebElement lamanDua;
+	@FindBy(xpath = "//a[@aria-label='Next']")
+	private WebElement lamanNext;
+	@FindBy(xpath = "/html[1]/body[1]/div[1]/*[name()='svg'][1]")
+	private WebElement lamanScrollUp;
 	
 	//form tambah testimonial
 	@FindBy(xpath = "//input[@name='uploadedFile']")
@@ -71,6 +78,9 @@ public class JCAdminTestimonial extends JCAdminLoginPage {
 //	Karakter (<|>|'|") tidak diizinkan
 	@FindBy(xpath = "//div[@class='invalid-feedback']")
 	private WebElement txtNamaKosong;
+//	Karakter (<|>|'|") tidak diizinkan
+	@FindBy(xpath = "//div[@class='alert alert-danger mt-2']")
+	private WebElement txtNamaKarSalah;
 //	Nama Wajib diisi
 	@FindBy(xpath = "//div[@class='card-body']//div[2]//div[1]//div[1]")
 	private WebElement txtNama;
@@ -91,6 +101,33 @@ public class JCAdminTestimonial extends JCAdminLoginPage {
 	private WebElement fieldSearch;
 	@FindBy(xpath ="/html[1]/body[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[1]/div[1]/div[3]/div[1]/b[1]")
 	private WebElement txtTotal;
+	@FindBy(xpath ="//b[normalize-space()='Total Search : 0 Data']")
+	private WebElement txtSearchKosong;
+	
+	
+//	=====================
+//	LIST TESTIMONIAL
+//	=====================
+	
+	public void cekListTestimonial() {
+		Utils.fullScroll();
+		Utils.delay(3, strDelay);
+		lamanDua.click();
+		Utils.delay(3, strDelay);
+//		Utils.fullScroll();
+		Utils.scrollFullMouse(500);
+		lamanNext.click();
+		Utils.delay(3, strDelay);
+//		Utils.fullScroll();
+		Utils.scrollFullMouse(500);
+		lamanScrollUp.click();
+		Utils.delay(3, strDelay);
+	}
+	
+	public void searchNamaPesertaList() {
+		this.fieldSearch.sendKeys("Nadin");
+		Utils.delay(2, strDelay);
+	}
 	
 //	=====================
 //	MENAMBAH DATA
@@ -334,7 +371,7 @@ public class JCAdminTestimonial extends JCAdminLoginPage {
 		File myFile = new File(lokasiFileGambarTambahNegAct);
 		uploadFile(myFile);
 		Utils.delay(3, strDelay);
-		this.nama.sendKeys("<Tulus |n");
+		this.nama.sendKeys("<Semangat 'n");
 		Utils.delay(3, strDelay);
 		Select selPublish = new Select(this.selPublish);
 		selPublish.selectByVisibleText("Active");
@@ -469,11 +506,52 @@ public class JCAdminTestimonial extends JCAdminLoginPage {
 		}
 		
 //		=====================
+//		MENGEDIT DATA NEGATIF
+//		=====================
+		public void editTestimonialNegativeNama(){
+			Utils.delay(3, strDelay);
+			editNamaPeserta.clear();
+			this.nama.sendKeys("<Kamu>");
+		}
+		
+		public void editTestimonialNegativeActiveNoActive(){
+			Utils.delay(3, strDelay);
+			editNamaPeserta.clear();
+			this.editNamaPeserta.sendKeys("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaAAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
+			Utils.delay(3, strDelay);
+			Select selPublish = new Select(this.selPublish);
+			selPublish.selectByVisibleText("No Active");
+			}
+		
+		public void editTestimonialNegativeNoActiveActive(){
+			Utils.delay(3, strDelay);
+			editNamaPeserta.clear();
+			this.editNamaPeserta.sendKeys("bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbBBbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb");
+			Utils.delay(3, strDelay);
+			Select selPublish = new Select(this.selPublish);
+			selPublish.selectByVisibleText("Active");
+			}
+		
+//		=====================
 //		MENCARI DATA
 //		=====================
 		
 		public void searchNamaPeserta() {
 			this.fieldSearch.sendKeys("Angga");
+			Utils.delay(2, strDelay);
+		}
+		
+//		=====================
+//	   	MENCARI DATA NEGATIVE
+//		=====================
+		
+		public void searchNamaPesertaNeg() {
+			this.fieldSearch.sendKeys("bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbBBbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb");
+			Utils.delay(2, strDelay);
+		}
+		
+		public void searchIsiTestiNeg() {
+			this.fieldSearch.sendKeys("JuaraCoding");
 			Utils.delay(2, strDelay);
 		}
 		
@@ -620,6 +698,19 @@ public class JCAdminTestimonial extends JCAdminLoginPage {
 		public String getTxtNamaKosong() {
 			return new WebDriverWait(driver, Duration.ofSeconds(15))
 					.until(ExpectedConditions.visibilityOf(txtNamaKosong)).getText();
+			}
+		
+		public String getTxtNamaKarSalah() {
+			JavascriptExecutor js = (JavascriptExecutor) driver;
+			WebElement btn = driver.findElement(By.xpath("//input[@value='Pilih Gambar Ulang']"));
+			js.executeScript("arguments[0].scrollIntoView();", btn);
+			return new WebDriverWait(driver, Duration.ofSeconds(15))
+					.until(ExpectedConditions.visibilityOf(txtNamaKarSalah)).getText();
+			}
+		
+		public String getTxtSearchKosong() {
+			return new WebDriverWait(driver, Duration.ofSeconds(15))
+					.until(ExpectedConditions.visibilityOf(txtSearchKosong)).getText();
 			}
 		
 //		hapus kolom edit (steril)

@@ -65,4 +65,13 @@ public class Utils {
 		}
 		
 }
+	public static void scrollFullMouse(int intScrMs) {
+		try {
+			Robot rbtclr = new Robot();
+			rbtclr.mouseWheel(intScrMs);
+		} catch (AWTException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 }

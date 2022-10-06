@@ -87,19 +87,19 @@ Feature: Tambah Testimonial Negative
    #	| 4 | TE035N |
    #	| 5 | TE036N |
    #	
-   #	Scenario Outline: Menambah daftar negative testimonial nama kecuali active
-    #When  <kode test case> Admin isi negative tambah dengan rating <angka rating> active nama kecuali
-    #And <kode test case> Admin click button simpan testimonial active negative nama kecuali
-    #Then <kode test case> Admin add negative testimonial active invalid nama kecuali
-    #
-   #Examples:
-   #	| angka rating | kode test case |
-   #	| 0 | TE037N |
-   #	| 1 | TE038N |
-   #	| 2 | TE039N |
-   #	| 3 | TE040N |
-   #	| 4 | TE041N |
-   #	| 5 | TE042N |
+   	Scenario Outline: Menambah daftar negative testimonial nama kecuali active
+    When  <kode test case> Admin isi negative tambah dengan rating <angka rating> active nama kecuali
+    And <kode test case> Admin click button simpan testimonial active negative nama kecuali
+    Then <kode test case> Admin add negative testimonial active invalid nama kecuali
+    
+   Examples:
+   	| angka rating | kode test case |
+   	| 0 | TE037N |
+   	| 1 | TE038N |
+   	| 2 | TE039N |
+   	| 3 | TE040N |
+   	| 4 | TE041N |
+   	| 5 | TE042N |
    	
    	Scenario Outline: Menambah daftar negative testimonial nama char no active
     When  <kode test case> Admin isi negative data tambah dengan rating <angka rating> no active nama char
