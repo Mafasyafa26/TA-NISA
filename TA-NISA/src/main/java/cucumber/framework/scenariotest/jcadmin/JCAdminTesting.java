@@ -1,7 +1,7 @@
 package cucumber.framework.scenariotest.jcadmin;
 
 public enum JCAdminTesting {
-	A001("User valid login Outlinee"),
+	A001(" User valid login Outlinee"),
 	A002("User valid login uppercase user Outlinee"),
 	A003("User valid login uppercase email Outlinee"),
 	A004("User valid login uppercase Outlinee"),
@@ -41,15 +41,19 @@ public enum JCAdminTesting {
 	A038("Mengedit isi testimonial"),
 	A039("Mengedit active no active"),
 	A040("Mengedit no active active"),
-	A041("Mencari nama peserta"),
-	A042("Mencari dan edit gambar"),
-	A043("Mencari dan edit nama"),
-	A044("Mencari dan edit isi"),
-	A045("Mencari dan edit publish"),
-	A046("Melihat data dalam page list testimonials"),
-	A047("Memindahkan halaman pertama"),
-	A048("Memindahkan halaman kedua"),
-	A049("Memindahkan halaman ketiga"),;
+	A041("Mengedit nama peserta dengan karakter dikecualikan pada data pertama"),
+	A042("Mengedit nama peserta full di data pertama"),
+	A043("Mencari nama peserta"),
+	A044("Mencari nama peserta dengan karakter"),
+	A045("Mencari isi testimonial peserta"),
+	A046("Mencari dan edit gambar"),
+	A047("Mencari dan edit nama"),
+	A048("Mencari dan edit isi"),
+	A049("Mencari dan edit publish"),
+	A050("Melihat data dalam page list testimonials"),
+	A051("Memindahkan halaman pertama"),
+	A052("Memindahkan halaman kedua"),
+	A053("Memindahkan halaman ketiga"),;
 	
 	private String testName;
 	

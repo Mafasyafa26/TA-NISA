@@ -58,7 +58,7 @@ public class JCTambahNegatifTestimonialImpl {
 
 	@Then("^(.*) Admin menambah testimonial active invalid negative$")
 	public void admin_menambah_testimonial_active_invalid_negative(String strCode) {
-		assertTrue(JCAdminTes.getTxtNama().contains("Nama Wajib diisi"));
+		assertTrue(JCAdminTes.getTxtNamaKosong().contains("Nama Wajib diisi"));
 		extentTest.log(LogStatus.PASS, "Admin menambah testimonial active invalid negative");
 	}
 
@@ -80,7 +80,7 @@ public class JCTambahNegatifTestimonialImpl {
 
 	@Then("^(.*) Admin menambah testimonial publish no active invalid negative$")
 	public void admin_menambah_testimonial_publish_no_active_invalid_negative(String strCode) {
-		assertTrue(JCAdminTes.getTxtNama().contains("Nama Wajib diisi"));
+		assertTrue(JCAdminTes.getTxtNamaKosong().contains("Nama Wajib diisi"));
 		extentTest.log(LogStatus.PASS, "Admin menambah testimonial publish no active invalid negative");
 	}
 	
@@ -202,7 +202,7 @@ public class JCTambahNegatifTestimonialImpl {
 
 	@Then("^(.*) Admin add testimonial negative no active invalid nama char$")
 	public void admin_add_testimonial_negative_no_active_invalid_nama_char(String strCode) {
-		assertTrue(JCAdminTes.getTxtNamaKosong().contains("Karakter (<|>|'|\") tidak diizinkan"));
+		assertTrue(JCAdminTes.getTxtNama().contains("Karakter (<|>|'|\") tidak diizinkan"));
 		extentTest.log(LogStatus.PASS, "Admin add testimonial negative no active invalid nama char");
 	}
 }

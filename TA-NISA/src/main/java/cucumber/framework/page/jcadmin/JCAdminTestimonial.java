@@ -28,7 +28,7 @@ public class JCAdminTestimonial extends JCAdminLoginPage {
 	
 //	deklarasi file gambar
 	private String lokasiFileGambarTambahNoAct = "src\\main\\resources\\gambarnisa\\raisa.jpg";
-	private String lokasiFileGambarTambahAct = "src\\main\\resources\\gambarnisa\\nadin.jpg";
+	private String lokasiFileGambarTambahAct = "src\\main\\resources\\gambarnisa\\aliando.jpeg";
 	private String lokasiFileGambarTambahNegNoAct = "src\\main\\resources\\gambarnisa\\dev.png";
 	private String lokasiFileGambarTambahNegAct = "src\\main\\resources\\gambarnisa\\jerome.jpeg";
 	private String lokasiFileGambarTambahForAct = "src\\main\\resources\\gambarnisa\\kartun.gif";
@@ -83,13 +83,13 @@ public class JCAdminTestimonial extends JCAdminLoginPage {
 	private WebElement txtIsi;
 //	Karakter (<|>|'|") tidak diizinkan
 	@FindBy(xpath = "//div[@class='invalid-feedback']")
-	private WebElement txtNamaKosong;
+	private WebElement txtNamaSalah;
 //	Karakter (<|>|'|") tidak diizinkan
 	@FindBy(xpath = "//div[@class='alert alert-danger mt-2']")
 	private WebElement txtNamaKarSalah;
 //	Nama Wajib diisi
 	@FindBy(xpath = "//div[@class='card-body']//div[2]//div[1]//div[1]")
-	private WebElement txtNama;
+	private WebElement txtNamaKosong;
 //	Harap isi content testimonial
 	@FindBy(xpath = "//div[@class='invalid-feedback']")
 	private WebElement txtIsiKosong;
@@ -106,7 +106,7 @@ public class JCAdminTestimonial extends JCAdminLoginPage {
 	@FindBy(xpath ="//input[@placeholder='Search Nama Peserta']")
 	private WebElement fieldSearch;
 	@FindBy(xpath ="/html[1]/body[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[1]/div[1]/div[3]/div[1]/b[1]")
-	private WebElement txtTotal;
+	private WebElement txtTotal; 
 	@FindBy(xpath ="//b[normalize-space()='Total Search : 0 Data']")
 	private WebElement txtSearchKosong;
 	
@@ -178,12 +178,12 @@ public class JCAdminTestimonial extends JCAdminLoginPage {
 		File myFile = new File(lokasiFileGambarTambahAct);
 		uploadFile(myFile);
 		Utils.delay(3, strDelay);
-		this.nama.sendKeys("Nadin Amizah");
+		this.nama.sendKeys("Aliando Syarief");
 		Utils.delay(3, strDelay);
 		Select selPublish = new Select(this.selPublish);
 		selPublish.selectByVisibleText("Active");
 		Utils.delay(3, strDelay);
-		this.isiTesti.sendKeys("Coding memang sedikit membuatku sibuk, tapi dengan juara coding membuatku tidak gabut lagi");
+		this.isiTesti.sendKeys("Coding memang membuatku sibuk, tapi dengan coding membuatku tidak gabut lagi");
 		Utils.delay(3, strDelay);
 		selRating.click();
 		Integer intRate = Integer.parseInt(rate);
@@ -577,8 +577,8 @@ public class JCAdminTestimonial extends JCAdminLoginPage {
 //		=====================
 		
 		public void searchNamaPeserta() {
-			this.fieldSearch.sendKeys("Angga");
-			Utils.delay(2, strDelay);
+			this.fieldSearch.sendKeys("Nadin");
+			Utils.delay(3, strDelay);
 		}
 		
 //		=====================
@@ -727,7 +727,7 @@ public class JCAdminTestimonial extends JCAdminLoginPage {
 		
 		public String getTxtNama() {
 			return new WebDriverWait(driver, Duration.ofSeconds(15))
-					.until(ExpectedConditions.visibilityOf(txtNama)).getText();
+					.until(ExpectedConditions.visibilityOf(txtNamaSalah)).getText();
 			}
 		
 		public String getTxtIsiKosong() {

@@ -9,6 +9,7 @@ import com.relevantcodes.extentreports.LogStatus;
 
 import cucumber.framework.constant.Constants;
 import cucumber.framework.page.jcadmin.JCAdminTestimonial;
+import cucumber.framework.utils.Utils;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -49,6 +50,7 @@ public class JCSearchTestimonialImpl {
 
 	@Then("TE052P Data ditemukan")
 	public void TE052P_data_ditemukan() {
+		Utils.delay(2, strDelay);
 		assertTrue(JCAdminTes.getTxtSearch().contains("Total Search"));
 		extentTest.log(LogStatus.PASS, "TE052P Data ditemukan");
 	}

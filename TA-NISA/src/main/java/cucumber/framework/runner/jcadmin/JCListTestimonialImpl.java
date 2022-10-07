@@ -36,7 +36,7 @@ public class JCListTestimonialImpl {
 
 	@And("TE001P Admin scroll page dan klik button halaman")
 	public void te001p_admin_scroll_page_dan_klik_button_halaman() {
-		
+		Utils.delay(1, strDelay);
 		JCAdminTes.cekListTestimonial();
 		extentTest.log(LogStatus.PASS, "TE001P Admin scroll page dan klik button halaman");
 	}
